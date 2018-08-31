@@ -18,11 +18,10 @@ const styles = {
     borderRadius: 1,
     borderColor: '#ddd',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    marginTop: 20,
-    marginBottom: 20,
-    marginLeft: 20,
-    marginRight: 20
+    shadowOffset: { wiedh: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    margin: 20
   }
 };
 
