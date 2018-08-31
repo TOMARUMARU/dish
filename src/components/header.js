@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <View style={headerStyle}>
-      <View style={{ marginLeft: 10 }}>
+      <View style={{ marginLeft: 20 }}>
         <Icon
           name={'search'}
           style={iconStyle}
@@ -23,7 +23,7 @@ const Header = () => {
         </Text>
       </View>
 
-      <View style={{ marginRight: 10 }}>
+      <View style={{ marginRight: 20 }}>
         <Icon
           name={'settings'}
           style={iconStyle}
