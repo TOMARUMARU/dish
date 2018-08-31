@@ -1,13 +1,12 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-const Button = () => {
-  <TouchableOpacity>
+const Button = ({ name }) => {
+  return (
     <Icon
-      name='arrow-left'
+      name={name}
     />
-  </TouchableOpacity>
+  );
 };
 
-export { Button }
+export { Button };
