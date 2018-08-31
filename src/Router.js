@@ -7,7 +7,7 @@ const RouterComponent = () => {
     <Router>
       <Scene key="root" hideNavBar>
         <Scene key="main">
-          <Scene component={Header} key="StoreList" initial />
+          <Scene component={Header} key="StoreList" hideNavBar initial />
         </Scene>
       </Scene>
     </Router>
