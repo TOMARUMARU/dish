@@ -1,14 +1,26 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import { View, TouchableOpacity } from 'react-native';
+import { Button } from './common';
 
 const ButtonList = () => {
   return (
-    <TouchableOpacity>
-      <Icon
-        name='arrow-left'
-      />
-    </TouchableOpacity>
+    <View>
+      <TouchableOpacity>
+        <Button name="arrow-left" />
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Button name="x" />
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Button name="thumbs-up" />
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Button name="briefcase" />
+      </TouchableOpacity>
+    </View>
   );
 };
 
