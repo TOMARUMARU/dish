@@ -7,12 +7,26 @@ const Header = () => {
 
   return (
     <View style={headerStyle}>
-      <Text style={mainTextStyle}>
-        気になるお店を右フリック！
-      </Text>
-      <Text style={subTextStyle}>
-        残り890件
-      </Text>
+      <View>
+        <Icon
+          name={'search'}
+        />
+      </View>
+
+      <View>
+        <Text style={mainTextStyle}>
+          気になるお店を右フリック！
+        </Text>
+        <Text style={subTextStyle}>
+          残り890件
+        </Text>
+      </View>
+
+      <View>
+        <Icon
+          name={'settings'}
+        />
+      </View>
     </View>
   );
 };
