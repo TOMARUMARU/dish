@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import axios from 'axios';
 import Header from './Header';
 import Store from './Store';
+import ButtonList from './ButtonList';
 
 class StoreList extends Component {
   state={ datas: [] };
@@ -23,6 +24,7 @@ class StoreList extends Component {
       <ScrollView>
         <Header />
         {this.renderStores()}
+        <ButtonList />
       </ScrollView>
     );
   }
