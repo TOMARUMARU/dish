@@ -9,7 +9,7 @@ const Header = () => {
     <View style={headerStyle}>
       <View style={{ marginLeft: 20 }}>
         <Icon
-          name={'search'}
+          name='search'
           style={iconStyle}
         />
       </View>
@@ -25,7 +25,7 @@ const Header = () => {
 
       <View style={{ marginRight: 20 }}>
         <Icon
-          name={'settings'}
+          name='settings'
           style={iconStyle}
         />
       </View>
