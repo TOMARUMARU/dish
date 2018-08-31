@@ -1,16 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, Image } from 'react-native';
+import Card from './Card';
 
 const Store = ({ data }) => {
   const { title, image } = data;
 
   return (
-    <View>
+    <Card>
+      <Image
+        source={{ uri: image }}
+        style={{ height: 50, width: 50 }}
+      />
       <Text>
         {title}
-        {image}
       </Text>
-    </View>
+    </Card>
   );
 };
 
