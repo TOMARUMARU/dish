@@ -1,14 +1,17 @@
 import React from 'react';
-import { Router, Scene, Actions } from 'react-native-router-flux';
+import { Router, Scene } from 'react-native-router-flux';
+import Header from './components/header';
 
-const Router = () => {
+const RouterComponent = () => {
   return (
     <Router>
-      <Scene>
-
+      <Scene key="root" hideNavBar>
+        <Scene key="main">
+          <Scene component={Header} key="StoreList" initial />
+        </Scene>
       </Scene>
     </Router>
   );
 };
 
-export default Router;
+export default RouterComponent;
