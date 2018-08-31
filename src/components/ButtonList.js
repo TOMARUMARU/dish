@@ -8,19 +8,30 @@ const ButtonList = () => {
   return (
     <View style={buttonlistStyle}>
       <TouchableOpacity>
-        <Button name="arrow-left" />
+        <Button
+          name="arrow-left"
+          color="red"
+        />
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Button name="x" />
+        <Button
+          name="x"
+        />
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Button name="thumbs-up" />
+        <Button
+          name="thumbs-up"
+          color="white"
+        />
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Button name="briefcase" />
+        <Button
+          name="briefcase"
+          color="red"
+        />
       </TouchableOpacity>
     </View>
   );
