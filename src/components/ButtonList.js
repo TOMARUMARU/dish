@@ -3,8 +3,10 @@ import { View, TouchableOpacity } from 'react-native';
 import { Button } from './common';
 
 const ButtonList = () => {
+  const { buttonlistStyle } = styles;
+
   return (
-    <View>
+    <View style={buttonlistStyle}>
       <TouchableOpacity>
         <Button name="arrow-left" />
       </TouchableOpacity>
@@ -22,6 +24,14 @@ const ButtonList = () => {
       </TouchableOpacity>
     </View>
   );
+};
+
+const styles = {
+  buttonlistStyle: {
+    marginLeft: 20,
+    marginRight: 20,
+    flexDirection: 'row'
+  }
 };
 
 export default ButtonList;
