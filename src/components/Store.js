@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Store = () => {
+const Store = ({ data }) => {
+  const { title, image } = data;
+
   return (
     <View>
       <Text>
-        aaaaa
+        {title}
+        {image}
       </Text>
     </View>
   );
