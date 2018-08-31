@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import Card from './Card';
+import { Card } from './common';
 
 const Store = ({ data }) => {
   const { title, image, evaluation, number, type, distance } = data;
