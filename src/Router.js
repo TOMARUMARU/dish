@@ -1,13 +1,13 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-import Header from './components/Header';
+import StoreList from './components/StoreList';
 
 const RouterComponent = () => {
   return (
     <Router>
       <Scene key="root" hideNavBar>
         <Scene key="main">
-          <Scene component={Header} key="StoreList" hideNavBar initial />
+          <Scene component={StoreList} key="StoreList" hideNavBar initial />
         </Scene>
       </Scene>
     </Router>
