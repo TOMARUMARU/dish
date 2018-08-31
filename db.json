@@ -1,5 +1,5 @@
 {
-  "todos": [
+  "dish": [
     {
       "id": 1,
       "title": "JSON ServerでダミーAPIを作成"
