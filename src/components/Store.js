@@ -81,7 +81,8 @@ const styles = {
     marginLeft: 20
   },
   iconStyle: {
-    fontSize: 19
+    fontSize: 19,
+    color: 'red'
   },
   valueStyle: {
     fontSize: 19,
@@ -89,7 +90,8 @@ const styles = {
     marginLeft: 5
   },
   numberStyle: {
-    fontSize: 19
+    fontSize: 19,
+    opacity: 0.8
   },
   infoStyle: {
     flexDirection: 'row',
