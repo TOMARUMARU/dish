@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
 const Header = () => {
   const { headerStyle, mainTextStyle, subTextStyle } = styles;
