@@ -9,7 +9,7 @@ const Store = ({ data }) => {
     <Card>
       <Image
         source={{ uri: image }}
-        style={{ height: 50, width: 50 }}
+        style={{ height: 450, width: 333 }}
       />
       <Text>
         {title}
