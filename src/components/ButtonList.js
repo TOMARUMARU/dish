@@ -17,6 +17,7 @@ const ButtonList = () => {
       <TouchableOpacity>
         <Button
           name="x"
+          color="gray"
         />
       </TouchableOpacity>
 
@@ -24,6 +25,7 @@ const ButtonList = () => {
         <Button
           name="thumbs-up"
           color="white"
+          backgroundColor="pink"
         />
       </TouchableOpacity>
 
