@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
@@ -22,14 +22,16 @@ class StoreList extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <View>
         <Header />
         <Swiper
           cards={this.state.datas}
           renderCard={this.renderCard}
-        />
-        <ButtonList />
-      </ScrollView>
+          style={{ }}
+        >
+          <ButtonList />
+        </Swiper>
+      </View>
     );
   }
 }
