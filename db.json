@@ -2,11 +2,12 @@
   "dish": [
     {
       "id": 1,
-      "title": "JSON ServerでダミーAPIを作成"
-    },
-    {
-      "id": 2,
-      "title": "Vue.jsで基本機能を実装"
+      "title": "Iron Man",
+      "image": "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fpic.prepics-cdn.com%2F20110715hp7%2F19695347.jpeg&twidth=1000&theight=0&qlt=80&res_format=jpg&op=r",
+      "evaluation": "4.8",
+      "number": "1002",
+      "type": "avengers",
+      "distance": "徒歩12分"
     }
   ]
 }
