@@ -58,7 +58,7 @@ const Store = ({ data }) => {
 
       <View>
         <Text style={textStyle}>
-          Powered by FOURSQUARE
+          Powered by TOMARUMARU
         </Text>
       </View>
     </Card>
