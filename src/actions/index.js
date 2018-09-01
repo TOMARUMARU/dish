@@ -1,1 +1,1 @@
-export * from './GoodActions';
+export * from './DisplayedActions';

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import FavoriteReducer from './FavoriteReducer';
+import DisplayedReducer from './DisplayedReducer';
 
 export default combineReducers({
-  favorites: FavoriteReducer
+  display: DisplayedReducer
 });

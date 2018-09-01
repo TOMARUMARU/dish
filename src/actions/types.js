@@ -1,1 +1,1 @@
-export const FAVORITES_LIST = 'favorite_list';
+export const CARD_DISPLAYED = 'card_displayed';
