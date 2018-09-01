@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
@@ -22,7 +22,7 @@ class StoreList extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <Header />
 
         <Swiper
@@ -34,7 +34,7 @@ class StoreList extends Component {
         />
 
         <ButtonList />
-      </View>
+      </ScrollView>
     );
   }
 }
