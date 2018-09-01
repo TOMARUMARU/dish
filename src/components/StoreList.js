@@ -24,13 +24,16 @@ class StoreList extends Component {
     return (
       <View>
         <Header />
+
         <Swiper
           cards={this.state.datas}
           renderCard={this.renderCard}
-          style={{ }}
-        >
-          <ButtonList />
-        </Swiper>
+          marginTop={100}
+          cardVerticalMargin={0}
+          backgroundColor='#E9E9EF'
+        />
+
+        <ButtonList />
       </View>
     );
   }
