@@ -17,6 +17,7 @@ class StoreList extends Component {
   }
 
   renderCard = data => {
+    this.props.cardDisplayed({ id: data.id });
     return (
       <Store key={data.title} data={data} />
     );
@@ -40,5 +41,10 @@ class StoreList extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  const { id } = state.displayedCardId;
 
-export default connect(null, { cardDisplayed })(StoreList);
+  return { id };
+};
+
+export default connect(mapStateToProps, { cardDisplayed })(StoreList);
