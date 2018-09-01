@@ -58,7 +58,7 @@ const Store = ({ data }) => {
 
       <View>
         <Text style={textStyle}>
-          Powerd by FOURSQUARE
+          Powered by FOURSQUARE
         </Text>
       </View>
     </Card>
@@ -68,7 +68,7 @@ const Store = ({ data }) => {
 const styles = {
   imageStyle: {
     height: 450,
-    width: 333
+    width: 300
   },
   titleStyle: {
     fontSize: 30,

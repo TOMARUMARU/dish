@@ -8,6 +8,15 @@
       "number": "1002",
       "type": "avengers",
       "distance": "徒歩12分"
+    },
+    {
+      "id": 1,
+      "title": "Captain America",
+      "image": "https://www.iosmode.com/wp-content/uploads/2016/05/Chris-Evans-iPhone-6-Wallpaper.jpg",
+      "evaluation": "4.4",
+      "number": "970",
+      "type": "avengers",
+      "distance": "徒歩8分"
     }
   ]
 }

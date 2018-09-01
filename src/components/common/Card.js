@@ -14,11 +14,12 @@ const Card = (props) => {
 const styles = {
   containerStyle: {
     height: 600,
+    width: 300,
     borderWidth: 1,
     borderRadius: 1,
     borderColor: '#ddd',
     shadowColor: '#000',
-    shadowOffset: { wiedh: 0, height: 2 },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     margin: 20
