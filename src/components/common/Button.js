@@ -20,6 +20,7 @@ const styles = {
   buttonStyle: {
     marginTop: 5,
     marginRight: 40,
+    marginLeft: 5,
     height: 50,
     width: 50,
     borderWidth: 1,
