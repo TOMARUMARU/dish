@@ -4,6 +4,7 @@ import axios from 'axios';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
 import Store from './Store';
+import ButtonList from './ButtonList';
 
 class StoreList extends Component {
   state={ datas: [] };
@@ -27,6 +28,7 @@ class StoreList extends Component {
           cards={this.state.datas}
           renderCard={this.renderCard}
         />
+        <ButtonList />
       </ScrollView>
     );
   }
