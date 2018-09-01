@@ -39,6 +39,7 @@ const ButtonList = () => {
 
 const styles = {
   buttonlistStyle: {
+    marginTop: 640,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row'
