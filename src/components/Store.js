@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import ButtonList from './ButtonList';
 import { Card } from './common';
 
 const Store = ({ data }) => {
@@ -20,48 +21,52 @@ const Store = ({ data }) => {
    } = styles;
 
   return (
-    <Card>
-      <Image
-        source={{ uri: image }}
-        style={imageStyle}
-      />
+    <View>
+      <Card>
+        <Image
+          source={{ uri: image }}
+          style={imageStyle}
+        />
 
-      <Text style={titleStyle}>
-        {title}
-      </Text>
-
-      <View style={evaluationStyle}>
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-
-        <Text style={valueStyle}>
-          {evaluation}
+        <Text style={titleStyle}>
+          {title}
         </Text>
 
-        <Text style={numberStyle}>
-          ({number})
-        </Text>
-      </View>
+        <View style={evaluationStyle}>
+          <Icon name='star' style={iconStyle} />
+          <Icon name='star' style={iconStyle} />
+          <Icon name='star' style={iconStyle} />
+          <Icon name='star' style={iconStyle} />
+          <Icon name='star' style={iconStyle} />
 
-      <View style={infoStyle}>
-        <Text style={typeStyle}>
-          {type}
-        </Text>
+          <Text style={valueStyle}>
+            {evaluation}
+          </Text>
 
-        <Text style={distanceStyle}>
-          {distance}
-        </Text>
-      </View>
+          <Text style={numberStyle}>
+            ({number})
+          </Text>
+        </View>
 
-      <View>
-        <Text style={textStyle}>
-          Powered by FOURSQUARE
-        </Text>
-      </View>
-    </Card>
+        <View style={infoStyle}>
+          <Text style={typeStyle}>
+            {type}
+          </Text>
+
+          <Text style={distanceStyle}>
+            {distance}
+          </Text>
+        </View>
+
+        <View>
+          <Text style={textStyle}>
+            Powered by FOURSQUARE
+          </Text>
+        </View>
+      </Card>
+
+      <ButtonList />
+    </View>
   );
 };
 
