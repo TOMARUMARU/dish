@@ -1,7 +1,5 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import { connect } from 'react-redux';
-import { cardDisplayed } from '../actions';
 import { Button } from './common';
 
 const ButtonList = () => {
@@ -50,4 +48,4 @@ const styles = {
   }
 };
 
-export default connect(null, { cardDisplayed })(ButtonList);
+export default ButtonList;

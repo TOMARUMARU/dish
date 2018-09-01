@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { cardDisplayed } from '../actions';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
 import Store from './Store';
@@ -22,7 +24,7 @@ class StoreList extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <View>
         <Header />
 
         <Swiper
@@ -34,9 +36,9 @@ class StoreList extends Component {
         />
 
         <ButtonList />
-      </ScrollView>
+      </View>
     );
   }
 }
 
-export default StoreList;
+export default connect(null, { cardDisplayed })(StoreList);
