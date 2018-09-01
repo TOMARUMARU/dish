@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
+import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
 import Store from './Store';
 
@@ -12,8 +13,8 @@ class StoreList extends Component {
       .then(response => this.setState({ datas: response.data }));
   }
 
-  renderStores() {
-    return this.state.datas.map(data =>
+  renderCard = data => {
+    return (
       <Store key={data.title} data={data} />
     );
   }
@@ -22,7 +23,10 @@ class StoreList extends Component {
     return (
       <ScrollView>
         <Header />
-        {this.renderStores()}
+        <Swiper
+          cards={this.state.datas}
+          renderCard={this.renderCard}
+        />
       </ScrollView>
     );
   }
