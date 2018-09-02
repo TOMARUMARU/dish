@@ -16,8 +16,11 @@ class StoreList extends Component {
       .then(response => this.setState({ datas: response.data }));
   }
 
+  swipedCard(index) {
+    this.props.cardDisplayed({ id: index });
+  }
+
   renderCard = data => {
-    this.props.cardDisplayed({ id: data.id });
     return (
       <Store key={data.title} data={data} />
     );
@@ -34,6 +37,7 @@ class StoreList extends Component {
           marginTop={100}
           cardVerticalMargin={0}
           backgroundColor='#E9E9EF'
+          onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
         />
 
         <ButtonList />
