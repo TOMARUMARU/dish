@@ -5,7 +5,7 @@ import { Button } from './common';
 class ButtonList extends Component {
 
   onGoodPress() {
-    console.log('test');
+    console.log(this.props.id);
   }
 
   render() {
@@ -25,12 +25,11 @@ class ButtonList extends Component {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.onGoodPress.bind(this)}>
           <Button
             name="thumbs-up"
             color="white"
             backgroundColor="pink"
-            onPress={this.onGoodPress.bind(this)}
           />
         </TouchableOpacity>
 
