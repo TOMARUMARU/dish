@@ -1,43 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { Button } from './common';
 
-const ButtonList = () => {
-  const { buttonlistStyle } = styles;
+class ButtonList extends Component {
 
-  return (
-    <View style={buttonlistStyle}>
-      <TouchableOpacity>
-        <Button
-          name="arrow-left"
-          color="red"
-        />
-      </TouchableOpacity>
+  onGoodPress() {
+    console.log('test');
+  }
 
-      <TouchableOpacity>
-        <Button
-          name="x"
-          color="gray"
-        />
-      </TouchableOpacity>
+  render() {
+    return (
+      <View style={styles.buttonlistStyle}>
+        <TouchableOpacity>
+          <Button
+            name="arrow-left"
+            color="red"
+          />
+        </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Button
-          name="thumbs-up"
-          color="white"
-          backgroundColor="pink"
-        />
-      </TouchableOpacity>
+        <TouchableOpacity>
+          <Button
+            name="x"
+            color="gray"
+          />
+        </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Button
-          name="briefcase"
-          color="red"
-        />
-      </TouchableOpacity>
-    </View>
-  );
-};
+        <TouchableOpacity>
+          <Button
+            name="thumbs-up"
+            color="white"
+            backgroundColor="pink"
+            onPress={this.onGoodPress.bind(this)}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Button
+            name="briefcase"
+            color="red"
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
 
 const styles = {
   buttonlistStyle: {

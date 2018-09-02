@@ -45,6 +45,7 @@ class StoreList extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   const { id } = state.displayedCardId;
 
