@@ -17,7 +17,7 @@ class StoreList extends Component {
   }
 
   swipedCard(index) {
-    this.props.cardDisplayed({ id: index });
+    this.props.cardDisplayed({ id: index + 2 });
   }
 
   renderCard = data => {
@@ -40,7 +40,9 @@ class StoreList extends Component {
           onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
         />
 
-        <ButtonList />
+        <ButtonList
+          id={this.props.id}
+        />
       </View>
     );
   }
