@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { defaultCards, cardDisplayed } from '../actions';
+import { defaultCards, cardDisplayed, favoriteCards } from '../actions';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
 import Store from './Store';
@@ -29,6 +29,7 @@ class StoreList extends Component {
           cardVerticalMargin={0}
           backgroundColor='#E9E9EF'
           onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
+          onSwipedRight={(cardIndex) => { this.props.favoriteCards(cardIndex + 1); }}
         />
       );
     }
@@ -56,13 +57,14 @@ class StoreList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { datas } = state.allCards;
-  const { id } = state.displayedCardId;
+const mapStateToProps = ({ allCards, displayedCardId, favoriteCardIds }) => {
+  const { datas } = allCards;
+  const { id } = displayedCardId;
+  const favorites = favoriteCardIds;
 
-  return { datas, id };
+  return { datas, id, favorites };
 };
 
 export default connect(mapStateToProps, {
-   defaultCards, cardDisplayed
+   defaultCards, cardDisplayed, favoriteCards
 })(StoreList);
