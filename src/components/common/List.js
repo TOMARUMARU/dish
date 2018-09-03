@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const List = () => {
   return (
-    <View>
+    <View style={{ height: 2000 }}>
       <Text>hoge</Text>
     </View>
   );
