@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import { favoriteCards } from '../actions';
 import { Button } from './common';
 
@@ -11,10 +12,10 @@ class ButtonList extends Component {
     this.props.favoriteCards(this.props.id);
   }
 
-  favoritesList() {
+  favoritesListButton() {
     if (this.props.favorites.length) {
       return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={Actions.FavoriteList}>
           <Button
             name="briefcase"
             color="red"
@@ -49,7 +50,7 @@ class ButtonList extends Component {
           />
         </TouchableOpacity>
 
-        {this.favoritesList()}
+        {this.favoritesListButton()}
       </View>
     );
   }
