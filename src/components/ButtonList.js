@@ -65,7 +65,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  const favorites = state.favoriteCards;
+  const favorites = state.favoriteCardIds;
 
   return { favorites };
 };
