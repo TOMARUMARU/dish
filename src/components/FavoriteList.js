@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { List } from './common';
 
 class FavoriteList extends Component {
   render() {
     return (
-      <View>
-        <Text>hoge</Text>
-      </View>
+      <List>
+        {this.props.children}
+      </List>
     );
   }
 }
