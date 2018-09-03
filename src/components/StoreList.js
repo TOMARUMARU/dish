@@ -32,6 +32,9 @@ class StoreList extends Component {
         <Header />
 
         <Swiper
+          ref={swiper => {
+            this.swiper = swiper;
+          }}
           cards={this.state.datas}
           renderCard={this.renderCard}
           marginTop={100}
@@ -42,6 +45,7 @@ class StoreList extends Component {
 
         <ButtonList
           id={this.props.id}
+          swiper={this.swiper}
         />
       </View>
     );

@@ -5,7 +5,7 @@ import { Button } from './common';
 class ButtonList extends Component {
 
   onGoodPress() {
-    console.log(this.props.id);
+    this.props.swiper.swipeRight(true);
   }
 
   render() {
