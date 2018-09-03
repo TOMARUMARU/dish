@@ -4,9 +4,11 @@ import { List } from './common';
 
 class FavoriteList extends Component {
   render() {
+    const { containerStyle, cancelStyle } = styles;
+    
     return (
-      <View style={styles.containerStyle}>
-        <View style={styles.cancelStyle}>
+      <View style={containerStyle}>
+        <View style={cancelStyle}>
           <Text>❌</Text>
         </View>
         <List>
