@@ -38,7 +38,6 @@ class StoreList extends Component {
           }}
           cards={this.state.datas}
           renderCard={this.renderCard}
-          cardIndex={1}
           marginTop={100}
           cardVerticalMargin={0}
           backgroundColor='#E9E9EF'
