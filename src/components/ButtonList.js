@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { favoriteCards } from '../actions';
 import { Button } from './common';
 
 class ButtonList extends Component {
 
   onGoodPress() {
     this.props.swiper.swipeRight(false);
+    this.props.favoriteCards(this.props.id);
   }
 
   render() {
@@ -53,4 +56,10 @@ const styles = {
   }
 };
 
-export default ButtonList;
+const mapStateToProps = state => {
+  const favorites = state.favoriteCards;
+
+  return { favorites };
+};
+
+export default connect(mapStateToProps, { favoriteCards })(ButtonList);
