@@ -1,41 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { favoriteCards } from '../actions';
 import { Button } from './common';
 
-const ButtonList = () => {
-  const { buttonlistStyle } = styles;
+class ButtonList extends Component {
 
-  return (
-    <View style={buttonlistStyle}>
-      <TouchableOpacity>
-        <Button
-          name="arrow-left"
-          color="red"
-        />
-      </TouchableOpacity>
+  onGoodPress() {
+    this.props.swiper.swipeRight(false);
+    this.props.favoriteCards(this.props.id);
+  }
 
-      <TouchableOpacity>
-        <Button
-          name="x"
-        />
-      </TouchableOpacity>
+  favoritesList() {
+    if (this.props.favorites.length) {
+      return (
+        <TouchableOpacity>
+          <Button
+            name="briefcase"
+            color="red"
+          />
+        </TouchableOpacity>
+      );
+    }
+  }
 
-      <TouchableOpacity>
-        <Button
-          name="thumbs-up"
-          color="white"
-        />
-      </TouchableOpacity>
+  render() {
+    return (
+      <View style={styles.buttonlistStyle}>
+        <TouchableOpacity>
+          <Button
+            name="arrow-left"
+            color="red"
+          />
+        </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Button
-          name="briefcase"
-          color="red"
-        />
-      </TouchableOpacity>
-    </View>
-  );
-};
+        <TouchableOpacity>
+          <Button
+            name="x"
+            color="gray"
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={this.onGoodPress.bind(this)}>
+          <Button
+            name="thumbs-up"
+            color="white"
+            backgroundColor="pink"
+          />
+        </TouchableOpacity>
+
+        {this.favoritesList()}
+      </View>
+    );
+  }
+}
 
 const styles = {
   buttonlistStyle: {
@@ -46,4 +64,10 @@ const styles = {
   }
 };
 
-export default ButtonList;
+const mapStateToProps = state => {
+  const favorites = state.favoriteCards;
+
+  return { favorites };
+};
+
+export default connect(mapStateToProps, { favoriteCards })(ButtonList);

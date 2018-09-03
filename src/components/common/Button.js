@@ -2,11 +2,16 @@ import React from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-const Button = ({ name, color }) => {
+const Button = ({ name, color, backgroundColor }) => {
   const { buttonStyle } = styles;
 
   return (
-    <View style={buttonStyle}>
+    <View
+      style={[
+        buttonStyle,
+        backgroundColor ? { backgroundColor } : null,
+      ]}
+    >
       <Icon
         name={name}
         style={{ color, fontSize: 20 }}
@@ -32,6 +37,7 @@ const styles = {
     shadowRadius: 2,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white'
   }
 };
 
