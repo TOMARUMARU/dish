@@ -6,5 +6,5 @@ import FavoriteReducer from './FavoriteReducer';
 export default combineReducers({
   allCards: AllCardsReducer,
   displayedCardId: DisplayedReducer,
-  favoriteCards: FavoriteReducer
+  favoriteCardIds: FavoriteReducer
 });
