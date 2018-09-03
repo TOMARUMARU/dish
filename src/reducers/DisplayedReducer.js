@@ -2,7 +2,7 @@ import {
   CARD_DISPLAYED
 } from '../actions/types';
 
-const INITIAL_STATE = { id: '' };
+const INITIAL_STATE = { id: 1 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {

@@ -17,7 +17,7 @@ class StoreList extends Component {
   }
 
   swipedCard(index) {
-    this.props.cardDisplayed({ id: index + 1 });
+    this.props.cardDisplayed({ id: index + 2 });
   }
 
   renderCard = data => {
@@ -27,7 +27,6 @@ class StoreList extends Component {
   }
 
   render() {
-    console.log(this.props.id);
     return (
       <View>
         <Header />
