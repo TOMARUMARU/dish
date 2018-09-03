@@ -3,7 +3,6 @@ import {
 }
  from './types';
 
-
 export const cardDisplayed = ({ id }) => {
   return {
     type: CARD_DISPLAYED,
