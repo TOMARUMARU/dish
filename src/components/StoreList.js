@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { cardDisplayed } from '../actions';
+import { defaultCards, cardDisplayed } from '../actions';
 import Swiper from 'react-native-deck-swiper';
 import Header from './Header';
 import Store from './Store';
 import ButtonList from './ButtonList';
 
 class StoreList extends Component {
-  state={ datas: [] };
-
   componentWillMount() {
-    axios.get('http://localhost:3000/dish')
-      .then(response => this.setState({ datas: response.data }));
+    this.props.defaultCards();
   }
 
   swipedCard(index) {
     this.props.cardDisplayed({ id: index + 2 });
+  }
+
+  renderSwiper() {
+    if (this.props.datas) {
+      return (
+        <Swiper
+          ref={swiper => {
+            this.swiper = swiper;
+          }}
+          cards={this.props.datas.data}
+          renderCard={this.renderCard}
+          marginTop={100}
+          cardVerticalMargin={0}
+          backgroundColor='#E9E9EF'
+          onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
+        />
+      );
+    }
   }
 
   renderCard = data => {
@@ -31,17 +45,7 @@ class StoreList extends Component {
       <View>
         <Header />
 
-        <Swiper
-          ref={swiper => {
-            this.swiper = swiper;
-          }}
-          cards={this.state.datas}
-          renderCard={this.renderCard}
-          marginTop={100}
-          cardVerticalMargin={0}
-          backgroundColor='#E9E9EF'
-          onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
-        />
+        {this.renderSwiper()}
 
         <ButtonList
           id={this.props.id}
@@ -53,9 +57,12 @@ class StoreList extends Component {
 }
 
 const mapStateToProps = state => {
+  const { datas } = state.allCards;
   const { id } = state.displayedCardId;
 
-  return { id };
+  return { datas, id };
 };
 
-export default connect(mapStateToProps, { cardDisplayed })(StoreList);
+export default connect(mapStateToProps, {
+   defaultCards, cardDisplayed
+})(StoreList);
