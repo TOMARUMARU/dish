@@ -11,6 +11,19 @@ class ButtonList extends Component {
     this.props.favoriteCards(this.props.id);
   }
 
+  favoritesList() {
+    if (this.props.favorites.length) {
+      return (
+        <TouchableOpacity>
+          <Button
+            name="briefcase"
+            color="red"
+          />
+        </TouchableOpacity>
+      );
+    }
+  }
+
   render() {
     return (
       <View style={styles.buttonlistStyle}>
@@ -36,12 +49,7 @@ class ButtonList extends Component {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Button
-            name="briefcase"
-            color="red"
-          />
-        </TouchableOpacity>
+        {this.favoritesList()}
       </View>
     );
   }
