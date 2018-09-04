@@ -43,7 +43,8 @@ const styles = {
     alignSelf: 'flex-end'
   },
   listStyle: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: 400
   }
 };
 

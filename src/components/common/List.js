@@ -67,7 +67,9 @@ const List = ({ data }) => {
 
 const styles = {
   listStyle: {
-    margin: 20,
+    marginRight: 35,
+    marginLeft: 35,
+    marginBottom: 35,
     borderWidth: 1,
     borderRadius: 1,
     borderColor: '#ddd',
@@ -75,11 +77,11 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    backgroundColor: 'white',    
+    backgroundColor: 'white',
   },
   imageStyle: {
-    height: 200,
-    width: 160
+    height: 330,
+    width: 300
   },
   titleStyle: {
     fontSize: 20,
