@@ -1,25 +1,28 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
-const List = () => {
-  const { containerStyle, listStyle } = styles;
+const List = ({ data }) => {
+  const { listStyle } = styles;
+  const {
+    title,
+    image,
+    evaluation,
+    number,
+    type,
+    distance
+  } = data;
 
   return (
-    <ScrollView style={containerStyle}>
-      <View style={listStyle}>
-        <Text>hogehogehogehogehoge</Text>
-        <Text>hoge</Text>
-        <Text>hoge</Text>
-        <Text>hoge</Text>
-        <Text>hoge</Text>
-        <Text>hoge</Text>
-
-      </View>
-      <View style={listStyle}>
-        <Text>hoge</Text>
-        <Text>hoge</Text>
-      </View>
-    </ScrollView>
+    <View style={listStyle}>
+      <Image
+        source={{ uri: image }}
+      />
+      <Text>{title}</Text>
+      <Text>{evaluation}</Text>
+      <Text>({number})</Text>
+      <Text>{type}</Text>
+      <Text>{distance}</Text>
+    </View>
   );
 };
 
