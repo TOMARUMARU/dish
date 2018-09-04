@@ -44,7 +44,6 @@ const styles = {
   },
   listStyle: {
     flexDirection: 'row',
-    width: 400
   }
 };
 
