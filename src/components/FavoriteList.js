@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/Feather';
 import { defaultCards, favoriteCards } from '../actions';
 import { List } from './common';
 
@@ -16,12 +18,17 @@ class FavoriteList extends Component {
   }
 
   render() {
-    const { containerStyle, cancelStyle, listStyle } = styles;
+    const { cancelStyle, xStyle, listStyle } = styles;
 
     return (
-      <View style={containerStyle}>
+      <View>
         <View style={cancelStyle}>
-          <Text>❌</Text>
+          <TouchableOpacity onPress={Actions.pop}>
+            <Icon
+              name="x"
+              style={xStyle}
+            />
+          </TouchableOpacity>
         </View>
 
         <ScrollView style={listStyle}>
@@ -33,14 +40,14 @@ class FavoriteList extends Component {
 }
 
 const styles = {
-  containerStyle: {
-    backgroundColor: 'white'
-  },
   cancelStyle: {
     marginTop: 60,
     marginRight: 30,
     marginBottom: 30,
     alignSelf: 'flex-end'
+  },
+  xStyle: {
+    fontSize: 30
   },
   listStyle: {
     flexDirection: 'row',
