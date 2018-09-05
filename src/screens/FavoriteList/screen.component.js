@@ -3,8 +3,8 @@ import { View, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Feather';
-import { defaultCards, favoriteCards } from '../actions';
-import { List } from './common';
+import { defaultCards, favoriteCards } from '../../actions';
+import { List } from '../../components/common';
 
 class FavoriteList extends Component {
   componentWillMount() {
