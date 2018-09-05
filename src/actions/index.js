@@ -1,3 +1,2 @@
-export * from './AllCardsActions';
-export * from './DisplayedActions';
-export * from './FavoriteActions';
+export * from '/Users/tomarumaru/projects/dish/src/screens/StoreList/actions';
+export * from '/Users/tomarumaru/projects/dish/src/screens/FavoriteList/actions';
