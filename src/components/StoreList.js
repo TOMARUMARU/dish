@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { defaultCards, cardDisplayed, favoriteCards } from '../actions';
 import Swiper from 'react-native-deck-swiper';
+import { defaultCards, cardDisplayed, favoriteCards } from '../actions';
 import Header from './Header';
 import Store from './Store';
 import ButtonList from './ButtonList';
