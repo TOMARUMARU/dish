@@ -24,7 +24,6 @@ class StoreList extends Component {
           marginTop={100}
           cardVerticalMargin={0}
           backgroundColor='#E9E9EF'
-          onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
           onSwipedRight={(cardIndex) => { this.props.favoriteCards(cardIndex); }}
         />
       );
@@ -45,7 +44,6 @@ class StoreList extends Component {
         {this.renderSwiper()}
 
         <ButtonList
-          id={this.props.id}
           swiper={this.swiper}
         />
       </View>
@@ -53,12 +51,11 @@ class StoreList extends Component {
   }
 }
 
-const mapStateToProps = ({ allCards, displayedCardId, favoriteCardIds }) => {
+const mapStateToProps = ({ allCards, favoriteCardIds }) => {
   const { datas } = allCards;
-  const { id } = displayedCardId;
   const favorites = favoriteCardIds;
 
-  return { datas, id, favorites };
+  return { datas, favorites };
 };
 
 export default connect(mapStateToProps, {
