@@ -1,6 +1,6 @@
 import {
   FAVORITE_CARDS
-} from '../actions/types';
+} from '../../actions/types';
 
 const INITIAL_STATE = [];
 

@@ -1,3 +1,2 @@
-export * from './AllCardsActions';
-export * from './DisplayedActions';
-export * from './FavoriteActions';
+export * from '../screens/StoreList/actions';
+export * from '../screens/FavoriteList/actions';

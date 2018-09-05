@@ -2,7 +2,7 @@ import axios from 'axios';
 import {
   DEFAULT_CARDS
 }
- from './types';
+ from '../../actions/types';
 
 
 export const defaultCards = () => {
