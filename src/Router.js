@@ -1,14 +1,18 @@
 import React from 'react';
-import { Router, Scene } from 'react-native-router-flux';
+import { Router, Scene, Modal } from 'react-native-router-flux';
 import StoreList from './components/StoreList';
+import FavoriteList from './components/FavoriteList';
 
 const RouterComponent = () => {
   return (
     <Router>
       <Scene key="root" hideNavBar>
-        <Scene key="main">
-          <Scene component={StoreList} key="StoreList" hideNavBar initial />
-        </Scene>
+        <Modal hideNavBar>
+          <Scene key="main">
+            <Scene component={StoreList} key="StoreList" hideNavBar initial />
+          </Scene>
+          <Scene component={FavoriteList} key="FavoriteList" />
+        </Modal>
       </Scene>
     </Router>
   );

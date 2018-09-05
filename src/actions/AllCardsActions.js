@@ -8,11 +8,11 @@ import {
 export const defaultCards = () => {
   return (dispatch) => {
     axios.get('http://localhost:3000/dish')
-      .then(response => DfalutData(dispatch, response));
+      .then(response => DefalutData(dispatch, response));
   };
 };
 
-const DfalutData = (dispatch, datas) => {
+const DefalutData = (dispatch, datas) => {
   dispatch({
     type: DEFAULT_CARDS,
     payload: datas

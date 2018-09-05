@@ -29,7 +29,7 @@ class StoreList extends Component {
           cardVerticalMargin={0}
           backgroundColor='#E9E9EF'
           onSwiped={(cardIndex) => { this.swipedCard(cardIndex); }}
-          onSwipedRight={(cardIndex) => { this.props.favoriteCards(cardIndex + 1); }}
+          onSwipedRight={(cardIndex) => { this.props.favoriteCards(cardIndex); }}
         />
       );
     }
