@@ -43,9 +43,7 @@ class StoreList extends Component {
 
         {this.renderSwiper()}
 
-        <ButtonList
-          swiper={this.swiper}
-        />
+        <ButtonList />
       </View>
     );
   }

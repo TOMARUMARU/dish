@@ -7,11 +7,6 @@ import { Button } from './common';
 
 class ButtonList extends Component {
 
-  onGoodPress() {
-    this.props.swiper.swipeRight(false);
-    this.props.favoriteCards(this.props.id);
-  }
-
   favoritesListButton() {
     if (this.props.favorites.length) {
       return (
@@ -42,7 +37,7 @@ class ButtonList extends Component {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={this.onGoodPress.bind(this)}>
+        <TouchableOpacity>
           <Button
             name="thumbs-up"
             color="white"
