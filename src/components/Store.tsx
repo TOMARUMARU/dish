@@ -1,19 +1,13 @@
+import * as React from 'react'
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { Card } from './common';
 
-const List = ({ data }) => {
-  const {
-    title,
-    image,
-    evaluation,
-    number,
-    type,
-    distance
-  } = data;
+const Store = ({ data }) => {
+  const { title, image, evaluation, number, type, distance } = data;
 
   const {
-    listStyle,
     imageStyle,
     titleStyle,
     evaluationStyle,
@@ -22,11 +16,12 @@ const List = ({ data }) => {
     numberStyle,
     infoStyle,
     typeStyle,
-    distanceStyle
+    distanceStyle,
+    textStyle
    } = styles;
 
   return (
-    <View style={listStyle}>
+    <Card>
       <Image
         source={{ uri: image }}
         style={imageStyle}
@@ -61,65 +56,64 @@ const List = ({ data }) => {
           {distance}
         </Text>
       </View>
-    </View>
+
+      <View>
+        <Text style={textStyle}>
+          Powered by TOMARUMARU
+        </Text>
+      </View>
+    </Card>
   );
 };
 
 const styles = {
-  listStyle: {
-    marginRight: 35,
-    marginLeft: 35,
-    marginBottom: 35,
-    borderWidth: 1,
-    borderRadius: 1,
-    borderColor: '#ddd',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    backgroundColor: 'white',
-  },
   imageStyle: {
-    height: 330,
+    height: 450,
     width: 300
   },
   titleStyle: {
-    fontSize: 20,
+    fontSize: 30,
     marginTop: 12,
-    marginLeft: 5
+    marginLeft: 20
   },
   evaluationStyle: {
     flexDirection: 'row',
     marginTop: 10,
-    marginLeft: 5
+    marginLeft: 20
   },
   iconStyle: {
-    fontSize: 14,
+    fontSize: 19,
     color: 'red'
   },
   valueStyle: {
-    fontSize: 14,
+    fontSize: 19,
     marginRight: 5,
     marginLeft: 5
   },
   numberStyle: {
-    fontSize: 14,
+    fontSize: 19,
     opacity: 0.8
   },
   infoStyle: {
     flexDirection: 'row',
     marginTop: 10,
-    marginBottom: 5,
-    marginLeft: 5
+    marginLeft: 20
   },
   typeStyle: {
-    fontSize: 14,
+    fontSize: 17,
     opacity: 0.8,
     marginRight: 5
   },
   distanceStyle: {
-    fontSize: 14,
+    fontSize: 17,
     opacity: 0.8
+  },
+  textStyle: {
+    fontSize: 10,
+    opacity: 0.6,
+    alignSelf: 'center',
+    marginTop: 20
   }
 };
-export { List };
+
+export default Store;

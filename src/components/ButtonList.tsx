@@ -1,3 +1,4 @@
+import * as React from 'react'
 import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';

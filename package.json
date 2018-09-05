@@ -7,17 +7,23 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-native": "^0.56.17",
     "axios": "^0.18.0",
     "react": "16.4.1",
     "react-native": "0.56.0",
     "react-native-deck-swiper": "^1.5.17",
     "react-native-router-flux": "^4.0.1",
+    "react-native-typescript-transformer": "^1.2.10",
     "react-native-vector-icons": "^5.0.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.1",
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
     "eslint-config-rallycoding": "^3.2.0",
@@ -26,6 +32,7 @@
     "react-test-renderer": "16.4.1",
     "ts-loader": "^5.0.0",
     "typescript": "^3.0.3",
+    "typescript-eslint-parser": "github:eslint/typescript-eslint-parser",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
