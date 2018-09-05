@@ -32,6 +32,7 @@
     "react-test-renderer": "16.4.1",
     "ts-loader": "^5.0.0",
     "typescript": "^3.0.3",
+    "typescript-eslint-parser": "github:eslint/typescript-eslint-parser",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
