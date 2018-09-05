@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import Swiper from 'react-native-deck-swiper';
-import { defaultCards, cardDisplayed, favoriteCards } from '../actions';
+import { defaultCards, favoriteCards } from '../actions';
 import Header from './Header';
 import Store from './Store';
 import ButtonList from './ButtonList';
@@ -10,10 +10,6 @@ import ButtonList from './ButtonList';
 class StoreList extends Component {
   componentWillMount() {
     this.props.defaultCards();
-  }
-
-  swipedCard(index) {
-    this.props.cardDisplayed({ id: index + 2 });
   }
 
   renderSwiper() {
@@ -66,5 +62,5 @@ const mapStateToProps = ({ allCards, displayedCardId, favoriteCardIds }) => {
 };
 
 export default connect(mapStateToProps, {
-   defaultCards, cardDisplayed, favoriteCards
+   defaultCards, favoriteCards
 })(StoreList);
