@@ -1,12 +1,12 @@
-import * as React from "react";
-import React, { Component } from "react";
-import { View } from "react-native";
-import { connect } from "react-redux";
-import Swiper from "react-native-deck-swiper";
-import { defaultCards, favoriteCards } from "../../actions";
-import Header from "../../components/Header";
-import Store from "../../components/Store";
-import ButtonList from "../../components/ButtonList";
+import * as React from 'react';
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import Swiper from 'react-native-deck-swiper';
+import { defaultCards, favoriteCards } from '../../actions';
+import Header from '../../components/Header';
+import Store from '../../components/Store';
+import ButtonList from '../../components/ButtonList';
 
 class StoreList extends Component {
   componentWillMount() {
