@@ -1,13 +1,29 @@
-import * as React from 'react';
-import React, { Component } from 'react';
-import { View, ScrollView, TouchableOpacity } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Feather';
 import { defaultCards, favoriteCards } from '../../actions';
 import { List } from '../../components/common';
+import { RootState } from '../../reducer';
 
-class FavoriteList extends Component {
+interface Props {
+  favorites: number[];
+  datas: {
+    data: [
+      {
+        title: string;
+        image: string;
+        evaluation: number;
+        number: number;
+        type: string;
+        distance: string;
+      }
+    ];
+  };
+}
+
+class FavoriteList extends PureComponent<Props> {
   componentWillMount() {
     this.props.defaultCards();
   }
@@ -38,7 +54,7 @@ class FavoriteList extends Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   cancelStyle: {
     marginTop: 60,
     marginRight: 30,
@@ -51,11 +67,11 @@ const styles = {
   listStyle: {
     flexDirection: 'row'
   }
-};
+});
 
-const mapStateToProps = ({ allCards, favoriteCardIds }) => {
-  const { datas } = allCards;
-  const favorites = favoriteCardIds;
+const mapStateToProps = (state: RootState) => {
+  const { datas } = state.allCards;
+  const favorites = state.favoriteCardIds;
 
   return { datas, favorites };
 };
