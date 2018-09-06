@@ -1,4 +1,9 @@
 {
+    "extends": [
+        "tslint-react", 
+        "tslint-config-prettier"
+      ],
+    "rulesDirectory": ["tslint-plugin-prettier"],
     "jsRules": {
         "class-name": true,
         "comment-format": [
@@ -44,6 +49,7 @@
         ]
     },
     "rules": {
+        "prettier": true,
         "class-name": true,
         "comment-format": [
             true,
