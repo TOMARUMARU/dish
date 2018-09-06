@@ -1,8 +1,8 @@
-import * as React from "react";
-import React from "react";
-import { Router, Scene, Modal } from "react-native-router-flux";
-import StoreList from "./screens/StoreList/screen.component";
-import FavoriteList from "./screens/FavoriteList/screen.component";
+import * as React from 'react';
+import React from 'react';
+import { Router, Scene, Modal } from 'react-native-router-flux';
+import StoreList from './screens/StoreList/screen.component';
+import FavoriteList from './screens/FavoriteList/screen.component';
 
 const RouterComponent = () => {
   return (
