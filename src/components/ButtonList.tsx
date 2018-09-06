@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
@@ -7,15 +7,11 @@ import { favoriteCards } from '../actions';
 import { Button } from './common';
 
 class ButtonList extends Component {
-
   favoritesListButton() {
     if (this.props.favorites.length) {
       return (
         <TouchableOpacity onPress={Actions.FavoriteList}>
-          <Button
-            name="briefcase"
-            color="red"
-          />
+          <Button name="briefcase" color="red" />
         </TouchableOpacity>
       );
     }
@@ -25,25 +21,15 @@ class ButtonList extends Component {
     return (
       <View style={styles.buttonlistStyle}>
         <TouchableOpacity>
-          <Button
-            name="arrow-left"
-            color="red"
-          />
+          <Button name="arrow-left" color="red" />
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Button
-            name="x"
-            color="gray"
-          />
+          <Button name="x" color="gray" />
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Button
-            name="thumbs-up"
-            color="white"
-            backgroundColor="pink"
-          />
+          <Button name="thumbs-up" color="white" backgroundColor="pink" />
         </TouchableOpacity>
 
         {this.favoritesListButton()}
@@ -67,4 +53,7 @@ const mapStateToProps = state => {
   return { favorites };
 };
 
-export default connect(mapStateToProps, { favoriteCards })(ButtonList);
+export default connect(
+  mapStateToProps,
+  { favoriteCards }
+)(ButtonList);

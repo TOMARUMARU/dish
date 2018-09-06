@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -18,49 +18,34 @@ const Store = ({ data }) => {
     typeStyle,
     distanceStyle,
     textStyle
-   } = styles;
+  } = styles;
 
   return (
     <Card>
-      <Image
-        source={{ uri: image }}
-        style={imageStyle}
-      />
+      <Image source={{ uri: image }} style={imageStyle} />
 
-      <Text style={titleStyle}>
-        {title}
-      </Text>
+      <Text style={titleStyle}>{title}</Text>
 
       <View style={evaluationStyle}>
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
 
-        <Text style={valueStyle}>
-          {evaluation}
-        </Text>
+        <Text style={valueStyle}>{evaluation}</Text>
 
-        <Text style={numberStyle}>
-          ({number})
-        </Text>
+        <Text style={numberStyle}>({number})</Text>
       </View>
 
       <View style={infoStyle}>
-        <Text style={typeStyle}>
-          {type}
-        </Text>
+        <Text style={typeStyle}>{type}</Text>
 
-        <Text style={distanceStyle}>
-          {distance}
-        </Text>
+        <Text style={distanceStyle}>{distance}</Text>
       </View>
 
       <View>
-        <Text style={textStyle}>
-          Powered by TOMARUMARU
-        </Text>
+        <Text style={textStyle}>Powered by TOMARUMARU</Text>
       </View>
     </Card>
   );
