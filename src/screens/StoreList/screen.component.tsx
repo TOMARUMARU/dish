@@ -9,6 +9,8 @@ import ButtonList from '../../components/ButtonList';
 import { RootState } from '../../reducer';
 
 interface Props {
+  defaultCards: Function;
+  favoriteCards: Function;
   datas: {
     data: {};
   };

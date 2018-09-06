@@ -8,6 +8,7 @@ import { List } from '../../components/common';
 import { RootState } from '../../reducer';
 
 interface Props {
+  defaultCards: Function;
   favorites: number[];
   datas: {
     data: [
