@@ -1,8 +1,13 @@
 import { FAVORITE_CARDS } from '../../actions/types';
 
-const INITIAL_STATE = [];
+export interface State extends Array<number> {}
 
-export default (state = INITIAL_STATE, action) => {
+const INITIAL_STATE: State = [];
+
+export default (
+  state = INITIAL_STATE,
+  action: { type: string; payload: number }
+) => {
   switch (action.type) {
     case FAVORITE_CARDS:
       return [...state, action.payload];
