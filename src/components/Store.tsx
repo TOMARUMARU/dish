@@ -1,11 +1,14 @@
-import * as React from 'react';
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { Card } from './common';
 
-const Store = ({ data }) => {
-  const { title, image, evaluation, number, type, distance } = data;
+interface Props {
+  data: object;
+}
+
+const Store: React.SFC<Props> = props => {
+  const { title, image, evaluation, number, type, distance } = props.data;
 
   const {
     imageStyle,
@@ -51,7 +54,7 @@ const Store = ({ data }) => {
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   imageStyle: {
     height: 450,
     width: 300
@@ -99,6 +102,6 @@ const styles = {
     alignSelf: 'center',
     marginTop: 20
   }
-};
+});
 
 export default Store;
