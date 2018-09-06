@@ -1,8 +1,11 @@
-import * as React from 'react';
-import React from 'react';
+import React, { Children } from 'react';
 import { View } from 'react-native';
 
-const Card = props => {
+interface Props {
+  children: object;
+}
+
+const Card: React.SFC<Props> = props => {
   const { containerStyle } = styles;
 
   return <View style={containerStyle}>{props.children}</View>;
