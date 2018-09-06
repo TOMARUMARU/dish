@@ -3,8 +3,17 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { Card } from './common';
 
+interface Card {
+  title: string;
+  image: string;
+  evaluation: number;
+  number: number;
+  type: string;
+  distance: string;
+}
+
 interface Props {
-  data: object;
+  data: Card;
 }
 
 const Store: React.SFC<Props> = props => {
