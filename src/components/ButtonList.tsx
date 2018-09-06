@@ -1,12 +1,11 @@
-import * as React from 'react';
 import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { favoriteCards } from '../actions';
 import { Button } from './common';
 
-class ButtonList extends Component {
+class ButtonList extends Component<{ favorites: [] }> {
   favoritesListButton() {
     if (this.props.favorites.length) {
       return (
@@ -38,14 +37,14 @@ class ButtonList extends Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   buttonlistStyle: {
     marginTop: 640,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row'
   }
-};
+});
 
 const mapStateToProps = state => {
   const favorites = state.favoriteCardIds;
