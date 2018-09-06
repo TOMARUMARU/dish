@@ -1,8 +1,15 @@
 import { DEFAULT_CARDS } from '../../actions/types';
 
-const INITIAL_STATE = { datas: null };
+export interface State {
+  datas: {};
+}
 
-export default (state = INITIAL_STATE, action) => {
+const INITIAL_STATE: State = { datas: '' };
+
+export default (
+  state = INITIAL_STATE,
+  action: { type: string; payload: {} }
+) => {
   switch (action.type) {
     case DEFAULT_CARDS:
       return { datas: action.payload };
