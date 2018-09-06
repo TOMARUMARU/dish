@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
@@ -24,18 +24,18 @@ class StoreList extends Component {
           renderCard={this.renderCard}
           marginTop={100}
           cardVerticalMargin={0}
-          backgroundColor='#E9E9EF'
-          onSwipedRight={(cardIndex) => { this.props.favoriteCards(cardIndex); }}
+          backgroundColor="#E9E9EF"
+          onSwipedRight={cardIndex => {
+            this.props.favoriteCards(cardIndex);
+          }}
         />
       );
     }
   }
 
   renderCard = data => {
-    return (
-      <Store key={data.title} data={data} />
-    );
-  }
+    return <Store key={data.title} data={data} />;
+  };
 
   render() {
     return (
@@ -57,6 +57,10 @@ const mapStateToProps = ({ allCards, favoriteCardIds }) => {
   return { datas, favorites };
 };
 
-export default connect(mapStateToProps, {
-   defaultCards, favoriteCards
-})(StoreList);
+export default connect(
+  mapStateToProps,
+  {
+    defaultCards,
+    favoriteCards
+  }
+)(StoreList);

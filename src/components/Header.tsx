@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import React from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -9,26 +9,16 @@ const Header = () => {
   return (
     <View style={headerStyle}>
       <View style={{ marginLeft: 20 }}>
-        <Icon
-          name='search'
-          style={iconStyle}
-        />
+        <Icon name="search" style={iconStyle} />
       </View>
 
       <View style={{ flex: 1 }}>
-        <Text style={mainTextStyle}>
-          気になるお店を右フリック！
-        </Text>
-        <Text style={subTextStyle}>
-          残り890件
-        </Text>
+        <Text style={mainTextStyle}>気になるお店を右フリック！</Text>
+        <Text style={subTextStyle}>残り890件</Text>
       </View>
 
       <View style={{ marginRight: 20 }}>
-        <Icon
-          name='settings'
-          style={iconStyle}
-        />
+        <Icon name="settings" style={iconStyle} />
       </View>
     </View>
   );
@@ -48,7 +38,7 @@ const styles = {
   subTextStyle: {
     fontSize: 12,
     opacity: 0.7,
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
   iconStyle: {
     fontSize: 20,

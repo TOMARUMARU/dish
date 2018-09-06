@@ -1,6 +1,4 @@
-import {
-  DEFAULT_CARDS
-} from '../../actions/types';
+import { DEFAULT_CARDS } from '../../actions/types';
 
 const INITIAL_STATE = { datas: null };
 

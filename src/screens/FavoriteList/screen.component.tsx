@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import React, { Component } from 'react';
 import { View, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
@@ -13,9 +13,12 @@ class FavoriteList extends Component {
   }
 
   listItems() {
-    return this.props.favorites.map(favorite =>
-      <List key={this.props.datas.data[favorite].title} data={this.props.datas.data[favorite]} />
-    );
+    return this.props.favorites.map(favorite => (
+      <List
+        key={this.props.datas.data[favorite].title}
+        data={this.props.datas.data[favorite]}
+      />
+    ));
   }
 
   render() {
@@ -25,16 +28,11 @@ class FavoriteList extends Component {
       <View>
         <View style={cancelStyle}>
           <TouchableOpacity onPress={Actions.pop}>
-            <Icon
-              name="x"
-              style={xStyle}
-            />
+            <Icon name="x" style={xStyle} />
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={listStyle}>
-          {this.listItems()}
-        </ScrollView>
+        <ScrollView style={listStyle}>{this.listItems()}</ScrollView>
       </View>
     );
   }
@@ -51,7 +49,7 @@ const styles = {
     fontSize: 30
   },
   listStyle: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   }
 };
 
@@ -62,6 +60,10 @@ const mapStateToProps = ({ allCards, favoriteCardIds }) => {
   return { datas, favorites };
 };
 
-export default connect(mapStateToProps, {
-   defaultCards, favoriteCards
-})(FavoriteList);
+export default connect(
+  mapStateToProps,
+  {
+    defaultCards,
+    favoriteCards
+  }
+)(FavoriteList);

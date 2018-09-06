@@ -1,28 +1,19 @@
-import * as React from 'react'
+import * as React from 'react';
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 const Button = ({ name, color, backgroundColor }) => {
   const { buttonStyle } = styles;
 
   return (
-    <View
-      style={[
-        buttonStyle,
-        backgroundColor ? { backgroundColor } : null,
-      ]}
-    >
-      <Icon
-        name={name}
-        style={{ color, fontSize: 20 }}
-      />
+    <View style={[buttonStyle, backgroundColor ? { backgroundColor } : null]}>
+      <Icon name={name} style={{ color, fontSize: 20 }} />
     </View>
   );
 };
 
-
-const styles = {
+const styles = StyleSheet.create({
   buttonStyle: {
     marginTop: 5,
     marginRight: 40,
@@ -40,6 +31,6 @@ const styles = {
     justifyContent: 'center',
     backgroundColor: 'white'
   }
-};
+});
 
 export { Button };

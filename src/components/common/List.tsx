@@ -1,17 +1,10 @@
-import * as React from 'react'
+import * as React from 'react';
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 const List = ({ data }) => {
-  const {
-    title,
-    image,
-    evaluation,
-    number,
-    type,
-    distance
-  } = data;
+  const { title, image, evaluation, number, type, distance } = data;
 
   const {
     listStyle,
@@ -24,43 +17,30 @@ const List = ({ data }) => {
     infoStyle,
     typeStyle,
     distanceStyle
-   } = styles;
+  } = styles;
 
   return (
     <View style={listStyle}>
-      <Image
-        source={{ uri: image }}
-        style={imageStyle}
-      />
+      <Image source={{ uri: image }} style={imageStyle} />
 
-      <Text style={titleStyle}>
-        {title}
-      </Text>
+      <Text style={titleStyle}>{title}</Text>
 
       <View style={evaluationStyle}>
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
-        <Icon name='star' style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
+        <Icon name="star" style={iconStyle} />
 
-        <Text style={valueStyle}>
-          {evaluation}
-        </Text>
+        <Text style={valueStyle}>{evaluation}</Text>
 
-        <Text style={numberStyle}>
-          ({number})
-        </Text>
+        <Text style={numberStyle}>({number})</Text>
       </View>
 
       <View style={infoStyle}>
-        <Text style={typeStyle}>
-          {type}
-        </Text>
+        <Text style={typeStyle}>{type}</Text>
 
-        <Text style={distanceStyle}>
-          {distance}
-        </Text>
+        <Text style={distanceStyle}>{distance}</Text>
       </View>
     </View>
   );
@@ -78,7 +58,7 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   imageStyle: {
     height: 330,
