@@ -8,6 +8,21 @@ interface Props {
   backgroundColor?: string;
 }
 
+const Button: React.SFC<Props> = props => {
+  return (
+    <View
+      style={[
+        styles.buttonStyle,
+        props.backgroundColor
+          ? { backgroundColor: props.backgroundColor }
+          : null
+      ]}
+    >
+      <Icon name={props.name} style={{ color: props.color, fontSize: 20 }} />
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   buttonStyle: {
     marginTop: 5,
@@ -27,20 +42,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   }
 });
-
-const Button: React.SFC<Props> = props => {
-  return (
-    <View
-      style={[
-        styles.buttonStyle,
-        props.backgroundColor
-          ? { backgroundColor: props.backgroundColor }
-          : null
-      ]}
-    >
-      <Icon name={props.name} style={{ color: props.color, fontSize: 20 }} />
-    </View>
-  );
-};
 
 export { Button };
