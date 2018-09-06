@@ -1,17 +1,12 @@
-import * as React from 'react';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-const Button = ({ name, color, backgroundColor }) => {
-  const { buttonStyle } = styles;
-
-  return (
-    <View style={[buttonStyle, backgroundColor ? { backgroundColor } : null]}>
-      <Icon name={name} style={{ color, fontSize: 20 }} />
-    </View>
-  );
-};
+interface Props {
+  name: string;
+  color: string;
+  backgroundColor?: string;
+}
 
 const styles = StyleSheet.create({
   buttonStyle: {
@@ -32,5 +27,20 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   }
 });
+
+const Button: React.SFC<Props> = props => {
+  return (
+    <View
+      style={[
+        styles.buttonStyle,
+        props.backgroundColor
+          ? { backgroundColor: props.backgroundColor }
+          : null
+      ]}
+    >
+      <Icon name={props.name} style={{ color: props.color, fontSize: 20 }} />
+    </View>
+  );
+};
 
 export { Button };
