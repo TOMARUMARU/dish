@@ -1,5 +1,5 @@
 import { combineEpics, Epic } from 'redux-observable';
-import { filter, mergeMap, map, tap, ignoreElements } from 'rxjs/operators';
+import { filter, mergeMap, map } from 'rxjs/operators';
 import { Action } from 'redux';
 import { ajax } from 'rxjs/ajax';
 
