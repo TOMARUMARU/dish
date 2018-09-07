@@ -1,18 +1,41 @@
 import { combineEpics, Epic } from 'redux-observable';
-import { filter, mergeMap, map } from 'rxjs/operators';
+import { Alert } from 'react-native';
+import {
+  filter,
+  mergeMap,
+  map,
+  tap,
+  catchError,
+  ignoreElements
+} from 'rxjs/operators';
 import { Action } from 'redux';
 import { ajax } from 'rxjs/ajax';
+import { of } from 'rxjs';
 
-export const fetchDefaultEpic: Epic<Action> = action$ =>
+const fetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
     filter(action => action.type === 'FETCH_DEFAULT_CARDS'),
     mergeMap(action =>
-      ajax
-        .getJSON('http://localhost:3000/dish')
-        .pipe(
-          map(response => ({ type: 'FETCH_CARD_SUCCESS', payload: response }))
+      ajax.getJSON('http://localhost:3000/dish').pipe(
+        map(response => ({ type: 'FETCH_CARD_SUCCESS', payload: response })),
+        catchError((err: Error) =>
+          of({
+            type: 'FETCH_CARD_FAILURE',
+            payload: err.message
+          })
         )
+      )
     )
   );
 
-export default combineEpics(fetchDefaultEpic);
+const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
+  action$.pipe(
+    filter(action => action.type === 'FETCH_CARD_FAILURE'),
+    tap((action: any) => Alert.alert(action.payload)),
+    ignoreElements()
+  );
+
+export default combineEpics(
+  fetchDefaultCardsEpic,
+  failureFetchDefaultCardsEpic
+);
