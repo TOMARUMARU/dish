@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux';
-import AllCardsReducer, {
-  State as AllCardsState
-} from './screens/StoreList/reducer';
-import FavoriteReducer, {
-  State as FavoriteState
-} from './screens/FavoriteList/reducer';
+import ScreensReducer, { ScreensState } from './screens/reducer';
+// import FavoriteReducer, {
+//   State as FavoriteState
+// } from './screens/FavoriteList/reducer';
 
 export interface RootState {
-  allCards: AllCardsState;
-  favoriteCardIds: FavoriteState;
+  screens: ScreensState;
+  // allCards: AllCardsState;
+  // favoriteCardIds: FavoriteState;
 }
 
 export default combineReducers({
-  allCards: AllCardsReducer,
-  favoriteCardIds: FavoriteReducer
+  screens: ScreensReducer
+  // allCards: AllCardsReducer,
+  // favoriteCardIds: FavoriteReducer
 });

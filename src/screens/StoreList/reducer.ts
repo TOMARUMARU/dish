@@ -1,18 +1,15 @@
-import { DEFAULT_CARDS } from '../../actions/types';
+import { Action } from 'redux';
 
 export interface State {
-  datas: {};
+  isRequesting: boolean;
 }
 
-const INITIAL_STATE: State = { datas: '' };
+const INITIAL_STATE: State = { isRequesting: false };
 
-export default (
-  state = INITIAL_STATE,
-  action: { type: string; payload: {} }
-) => {
+export default (state = INITIAL_STATE, action: Action) => {
   switch (action.type) {
-    case DEFAULT_CARDS:
-      return { datas: action.payload };
+    case 'FETCH_DEFAULT_CARDS':
+      return { isRequesting: true };
     default:
       return state;
   }
