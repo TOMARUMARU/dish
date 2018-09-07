@@ -7,7 +7,10 @@ export interface State {
 
 const INITIAL_STATE: State = { isRequesting: false, datas: '' };
 
-export default (state = INITIAL_STATE, action: Action) => {
+export default (
+  state = INITIAL_STATE,
+  action: { type: string; payload: {} }
+) => {
   switch (action.type) {
     case 'FETCH_DEFAULT_CARDS':
       return { ...state, isRequesting: true };
