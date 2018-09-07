@@ -1,37 +1,43 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
-import { connect } from 'react-redux';
+import { View, ActivityIndicator } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
-import { defaultCards, favoriteCards } from '../../actions';
 import Header from '../../components/Header';
 import Store from '../../components/Store';
 import ButtonList from '../../components/ButtonList';
-import { RootState } from '../../reducer';
 
-interface Props {
-  defaultCards: Function;
-  favoriteCards: Function;
-  datas: {
-    data: {};
-  };
+export interface StateProps {
+  datas: {} | '';
+  // favorites: number[];
+  isRequesting: boolean;
 }
 
-class StoreList extends PureComponent<Props> {
+export interface DispatchProp {
+  onFetchDefaultCards: () => void;
+  // favoriteCards: () => void;
+}
+
+type Props = StateProps & DispatchProp;
+
+export default class StoreList extends PureComponent<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   componentWillMount() {
-    this.props.defaultCards();
+    this.props.onFetchDefaultCards();
   }
 
   renderSwiper() {
     if (this.props.datas) {
       return (
         <Swiper
-          cards={this.props.datas.data}
+          cards={this.props.datas}
           renderCard={this.renderCard}
           marginTop={100}
           cardVerticalMargin={0}
           backgroundColor="#E9E9EF"
           onSwipedRight={(cardIndex: number) => {
-            this.props.favoriteCards(cardIndex);
+            // this.props.favoriteCards(cardIndex);
           }}
         />
       );
@@ -53,26 +59,9 @@ class StoreList extends PureComponent<Props> {
     return (
       <View>
         <Header />
-
-        {this.renderSwiper()}
-
+        {this.props.isRequesting ? <ActivityIndicator /> : this.renderSwiper()}
         <ButtonList />
       </View>
     );
   }
 }
-
-const mapStateToProps = (state: RootState) => {
-  const { datas } = state.allCards;
-  const favorites = state.favoriteCardIds;
-
-  return { datas, favorites };
-};
-
-export default connect(
-  mapStateToProps,
-  {
-    defaultCards,
-    favoriteCards
-  }
-)(StoreList);

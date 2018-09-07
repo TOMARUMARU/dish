@@ -1,18 +1,19 @@
-import { DEFAULT_CARDS } from '../../actions/types';
-
 export interface State {
+  isRequesting: boolean;
   datas: {};
 }
 
-const INITIAL_STATE: State = { datas: '' };
+const INITIAL_STATE: State = { isRequesting: false, datas: '' };
 
 export default (
   state = INITIAL_STATE,
-  action: { type: string; payload: {} }
+  action: { type: string; payload: [] }
 ) => {
   switch (action.type) {
-    case DEFAULT_CARDS:
-      return { datas: action.payload };
+    case 'FETCH_DEFAULT_CARDS':
+      return { ...state, isRequesting: true };
+    case 'FETCH_CARD_SUCCESS':
+      return { ...state, isRequesting: false, datas: action.payload };
     default:
       return state;
   }
