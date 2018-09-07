@@ -1,3 +1,4 @@
+import actionCreatorFactory from 'typescript-fsa';
 import axios from 'axios';
 import { DEFAULT_CARDS } from '../../actions/types';
 
