@@ -1,10 +1,22 @@
-import * as React from 'react';
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-const List = ({ data }) => {
-  const { title, image, evaluation, number, type, distance } = data;
+interface Card {
+  title: string;
+  image: string;
+  evaluation: number;
+  number: number;
+  type: string;
+  distance: string;
+}
+
+interface Props {
+  data: Card;
+}
+
+const List: React.SFC<Props> = props => {
+  const { title, image, evaluation, number, type, distance } = props.data;
 
   const {
     listStyle,
@@ -46,7 +58,7 @@ const List = ({ data }) => {
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   listStyle: {
     marginRight: 35,
     marginLeft: 35,
@@ -102,5 +114,5 @@ const styles = {
     fontSize: 14,
     opacity: 0.8
   }
-};
+});
 export { List };

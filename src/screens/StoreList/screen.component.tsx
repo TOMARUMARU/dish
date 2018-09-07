@@ -1,5 +1,4 @@
-import * as React from 'react';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import Swiper from 'react-native-deck-swiper';
@@ -7,8 +6,17 @@ import { defaultCards, favoriteCards } from '../../actions';
 import Header from '../../components/Header';
 import Store from '../../components/Store';
 import ButtonList from '../../components/ButtonList';
+import { RootState } from '../../reducer';
 
-class StoreList extends Component {
+interface Props {
+  defaultCards: Function;
+  favoriteCards: Function;
+  datas: {
+    data: {};
+  };
+}
+
+class StoreList extends PureComponent<Props> {
   componentWillMount() {
     this.props.defaultCards();
   }
@@ -17,15 +25,12 @@ class StoreList extends Component {
     if (this.props.datas) {
       return (
         <Swiper
-          ref={swiper => {
-            this.swiper = swiper;
-          }}
           cards={this.props.datas.data}
           renderCard={this.renderCard}
           marginTop={100}
           cardVerticalMargin={0}
           backgroundColor="#E9E9EF"
-          onSwipedRight={cardIndex => {
+          onSwipedRight={(cardIndex: number) => {
             this.props.favoriteCards(cardIndex);
           }}
         />
@@ -33,7 +38,14 @@ class StoreList extends Component {
     }
   }
 
-  renderCard = data => {
+  renderCard = (data: {
+    title: string;
+    image: string;
+    evaluation: number;
+    number: number;
+    type: string;
+    distance: string;
+  }) => {
     return <Store key={data.title} data={data} />;
   };
 
@@ -50,9 +62,9 @@ class StoreList extends Component {
   }
 }
 
-const mapStateToProps = ({ allCards, favoriteCardIds }) => {
-  const { datas } = allCards;
-  const favorites = favoriteCardIds;
+const mapStateToProps = (state: RootState) => {
+  const { datas } = state.allCards;
+  const favorites = state.favoriteCardIds;
 
   return { datas, favorites };
 };

@@ -1,6 +1,5 @@
-import * as React from 'react';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 const Header = () => {
@@ -24,7 +23,7 @@ const Header = () => {
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   headerStyle: {
     marginTop: 60,
     flexDirection: 'row',
@@ -44,6 +43,6 @@ const styles = {
     fontSize: 20,
     opacity: 0.8
   }
-};
+});
 
 export default Header;

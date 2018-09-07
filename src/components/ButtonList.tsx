@@ -1,14 +1,18 @@
-import * as React from 'react';
-import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { favoriteCards } from '../actions';
 import { Button } from './common';
+import { RootState } from '../reducer';
 
-class ButtonList extends Component {
+interface Props {
+  favorites: number[];
+}
+
+class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
-    if (this.props.favorites.length) {
+    if (this.props.favorites) {
       return (
         <TouchableOpacity onPress={Actions.FavoriteList}>
           <Button name="briefcase" color="red" />
@@ -38,16 +42,16 @@ class ButtonList extends Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   buttonlistStyle: {
     marginTop: 640,
     marginLeft: 20,
     marginRight: 20,
     flexDirection: 'row'
   }
-};
+});
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: RootState) => {
   const favorites = state.favoriteCardIds;
 
   return { favorites };
