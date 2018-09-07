@@ -20,8 +20,12 @@ export interface DispatchProp {
 type Props = StateProps & DispatchProp;
 
 export default class StoreList extends PureComponent<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   componentWillMount() {
-    // this.props.onFetchDefaultCards();
+    this.props.onFetchDefaultCards();
   }
 
   renderSwiper() {
