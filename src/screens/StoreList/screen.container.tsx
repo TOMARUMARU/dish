@@ -6,7 +6,7 @@ import Component, { StateProps, DispatchProp } from './screen.component';
 
 const mapStateToProps = (state: RootState): StateProps => {
   const { isRequesting } = state.screens.storeList;
-  const datas = null;
+  const { datas } = state.screens.storeList;
   // const favorites = state.favoriteCardIds;
 
   return { datas, isRequesting };
