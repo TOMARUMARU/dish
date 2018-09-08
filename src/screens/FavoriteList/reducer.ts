@@ -1,5 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { favoriteActions } from '../../action';
+import { favoriteActions } from './actions';
 
 export interface State {
   favorites: number[];
