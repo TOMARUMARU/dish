@@ -1,8 +1,3 @@
-import { FAVORITE_CARDS } from '../../actions/types';
-
-export const favoriteCards = (cardId: number) => {
-  return {
-    type: FAVORITE_CARDS,
-    payload: cardId
-  };
+export const addFavoriteCards = (cardIndex: number) => {
+  return { type: 'ADD_FAVORITE_CARDS', payload: cardIndex };
 };

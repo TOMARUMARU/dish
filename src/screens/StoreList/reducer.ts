@@ -3,7 +3,10 @@ export interface State {
   datas: {};
 }
 
-const INITIAL_STATE: State = { isRequesting: false, datas: '' };
+const INITIAL_STATE: State = {
+  isRequesting: false,
+  datas: ''
+};
 
 export default (
   state = INITIAL_STATE,

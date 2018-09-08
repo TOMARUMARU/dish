@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
 import StoreListReducer, { State as StoreListState } from './StoreList/reducer';
-// import FavoriteReducer, {
-//   State as FavoriteState
-// } from './screens/FavoriteList/reducer';
+import FavoriteListReducer, {
+  State as FavorieListState
+} from './FavoriteList/reducer';
 
 export interface ScreensState {
   storeList: StoreListState;
+  favoriteList: FavorieListState;
 }
 
 export default combineReducers<ScreensState>({
-  storeList: StoreListReducer
+  storeList: StoreListReducer,
+  favoriteList: FavoriteListReducer
 });

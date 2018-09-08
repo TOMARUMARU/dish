@@ -6,14 +6,14 @@ import Store from '../../components/Store';
 import ButtonList from '../../components/ButtonList';
 
 export interface StateProps {
-  datas: {} | '';
-  // favorites: number[];
   isRequesting: boolean;
+  datas: {} | '';
+  favorites: number[];
 }
 
 export interface DispatchProp {
   onFetchDefaultCards: () => void;
-  // favoriteCards: () => void;
+  addFavoriteCards: (cardIndex: number) => void;
 }
 
 type Props = StateProps & DispatchProp;
@@ -37,7 +37,7 @@ export default class StoreList extends PureComponent<Props> {
           cardVerticalMargin={0}
           backgroundColor="#E9E9EF"
           onSwipedRight={(cardIndex: number) => {
-            // this.props.favoriteCards(cardIndex);
+            this.props.addFavoriteCards(cardIndex);
           }}
         />
       );
