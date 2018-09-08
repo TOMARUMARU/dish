@@ -16,7 +16,7 @@ import { of } from 'rxjs';
 const fetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
     filter(defaultCardsActions.fetch.match),
-    mergeMap(action =>
+    mergeMap(() =>
       ajax.getJSON('http://localhost:3000/dish').pipe(
         map(response => ({
           type: defaultCardsActions.success.type,
@@ -35,7 +35,7 @@ const fetchDefaultCardsEpic: Epic<Action> = action$ =>
 const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
     filter(defaultCardsActions.failure.match),
-    tap((action: any) => Alert.alert(action.payload)),
+    tap(action => Alert.alert(action.payload)),
     ignoreElements()
   );
 
