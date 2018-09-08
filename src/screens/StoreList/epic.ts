@@ -1,3 +1,4 @@
+import { defaultCardsActions } from '../../action';
 import { combineEpics, Epic } from 'redux-observable';
 import { Alert } from 'react-native';
 import {
@@ -14,13 +15,16 @@ import { of } from 'rxjs';
 
 const fetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
-    filter(action => action.type === 'FETCH_DEFAULT_CARDS'),
+    filter(defaultCardsActions.fetch.match),
     mergeMap(action =>
       ajax.getJSON('http://localhost:3000/dish').pipe(
-        map(response => ({ type: 'FETCH_CARD_SUCCESS', payload: response })),
+        map(response => ({
+          type: defaultCardsActions.success.type,
+          payload: response
+        })),
         catchError((err: Error) =>
           of({
-            type: 'FETCH_CARD_FAILURE',
+            type: defaultCardsActions.failure.type,
             payload: err.message
           })
         )
@@ -30,7 +34,7 @@ const fetchDefaultCardsEpic: Epic<Action> = action$ =>
 
 const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
-    filter(action => action.type === 'FETCH_CARD_FAILURE'),
+    filter(defaultCardsActions.failure.match),
     tap((action: any) => Alert.alert(action.payload)),
     ignoreElements()
   );
