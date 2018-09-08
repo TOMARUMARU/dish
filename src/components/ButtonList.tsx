@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { Dispatch, Action } from 'redux';
 import { Actions } from 'react-native-router-flux';
-import { favoriteCards } from '../actions';
+import { favoriteActions } from '../action';
 import { Button } from './common';
 import { RootState } from '../reducer';
 
@@ -10,9 +11,13 @@ interface Props {
   favorites: number[];
 }
 
+interface DispatchProp {
+  fetchFavoriteCards: () => void;
+}
+
 class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
-    if (this.props.favorites) {
+    if (this.props.favorites.length) {
       return (
         <TouchableOpacity onPress={Actions.FavoriteList}>
           <Button name="briefcase" color="red" />
@@ -52,12 +57,18 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state: RootState) => {
-  const favorites = state.favoriteCardIds;
+  const { favorites } = state.screens.favoriteList;
 
   return { favorites };
 };
 
+const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
+  return {
+    fetchFavoriteCards: () => dispatch(favoriteActions.fetch())
+  };
+};
+
 export default connect(
   mapStateToProps,
-  { favoriteCards }
+  mapDispatchToProps
 )(ButtonList);
