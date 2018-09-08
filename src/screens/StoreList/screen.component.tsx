@@ -13,7 +13,7 @@ export interface StateProps {
 
 export interface DispatchProp {
   onFetchDefaultCards: () => void;
-  addfavoriteCards: () => void;
+  addFavoriteCards: (cardIndex: number) => void;
 }
 
 type Props = StateProps & DispatchProp;
@@ -37,7 +37,7 @@ export default class StoreList extends PureComponent<Props> {
           cardVerticalMargin={0}
           backgroundColor="#E9E9EF"
           onSwipedRight={(cardIndex: number) => {
-            this.props.addFavoriteCards();
+            this.props.addFavoriteCards(cardIndex);
           }}
         />
       );

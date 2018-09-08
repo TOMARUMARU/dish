@@ -13,7 +13,8 @@ const mapStateToProps = (state: RootState): StateProps => {
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
   return {
     onFetchDefaultCards: () => dispatch(fetchDefaultCards()),
-    addFavoriteCards: () => dispatch(addFavoriteCards())
+    addFavoriteCards: (cardIndex: number) =>
+      dispatch(addFavoriteCards(cardIndex))
   };
 };
 
