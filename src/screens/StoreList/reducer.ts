@@ -1,21 +1,18 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { defaultCardsActions } from '../../action';
-import { Card } from '../../entities';
+import { defaultCardsActions } from '../../entities/cards/action';
 
 export interface State {
   isRequesting: boolean;
-  datas: Card[];
 }
 
 const INITIAL_STATE: State = {
-  isRequesting: false,
-  datas: []
+  isRequesting: true
 };
 
 export default reducerWithInitialState(INITIAL_STATE)
-  .case(defaultCardsActions.fetch, (state, payload) => {
+  .case(defaultCardsActions.fetch, state => {
     return { ...state, isRequesting: true };
   })
-  .case(defaultCardsActions.success, (state, payload) => {
-    return { ...state, isRequesting: false, datas: payload };
+  .case(defaultCardsActions.success, state => {
+    return { ...state, isRequesting: false };
   });
