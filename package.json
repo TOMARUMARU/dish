@@ -21,7 +21,8 @@
     "redux-thunk": "^2.3.0",
     "rxjs": "^6.3.2",
     "rxjs-compat": "^6.3.2",
-    "typescript-fsa": "^3.0.0-beta-2"
+    "typescript-fsa": "^3.0.0-beta-2",
+    "typescript-fsa-reducers": "^0.4.5"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
