@@ -4,46 +4,66 @@
       "id": 1,
       "title": "Iron Man",
       "image": "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fpic.prepics-cdn.com%2F20110715hp7%2F19695347.jpeg&twidth=1000&theight=0&qlt=80&res_format=jpg&op=r",
-      "evaluation": "4.8",
-      "number": "1002",
-      "type": "avengers",
-      "distance": "徒歩12分"
+      "evaluation": {
+        "average": "4.8",
+        "number": "1002"
+      },
+      "info": {
+        "type": "avengers",
+        "distance": "徒歩12分"
+      }
     },
     {
       "id": 2,
       "title": "Captain America",
       "image": "https://www.iosmode.com/wp-content/uploads/2016/05/Chris-Evans-iPhone-6-Wallpaper.jpg",
-      "evaluation": "4.4",
-      "number": "970",
-      "type": "avengers",
-      "distance": "徒歩8分"
+      "evaluation": {
+        "average": "4.4",
+        "number": "970"
+      },
+      "info": {
+        "type": "avengers",
+        "distance": "徒歩8分"
+      }
     },
     {
       "id": 3,
       "title": "Spider Man",
       "image": "https://img.cinematoday.jp/a/N0050652/_size_640x/_v_1361904963/main.jpg",
-      "evaluation": "4.6",
-      "number": "1132",
-      "type": "avengers",
-      "distance": "徒歩2分"
+      "evaluation": {
+        "average": "4.6",
+        "number": "1132"
+      },
+      "info": {
+        "type": "avengers",
+        "distance": "徒歩2分"
+      }
     },
     {
       "id": 4,
       "title": "Hulk",
       "image": "https://i.pinimg.com/originals/c2/9a/f4/c29af4292ef371b557e2459f0c4afcd5.jpg",
-      "evaluation": "4.9",
-      "number": "679",
-      "type": "avengers",
-      "distance": "徒歩90分"
+      "evaluation": {
+        "average": "4.9",
+        "number": "679"
+      },
+      "info": {
+        "type": "avengers",
+        "distance": "徒歩90分"
+      }
     },
     {
       "id": 5,
       "title": "Thor",
       "image": "https://marvel.disney.co.jp/content/dam/disney/characters/marvel/avengers-iw/1663_thor_main.jpg",
-      "evaluation": "5.0",
-      "number": "845",
-      "type": "avengers",
-      "distance": "徒歩220分"
+      "evaluation": {
+        "average": "5.0",
+        "number": "845"
+      },
+      "info": {
+        "type": "avengers",
+        "distance": "徒歩220分"
+      }
     }
   ]
 }
