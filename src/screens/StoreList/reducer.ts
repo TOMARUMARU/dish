@@ -12,7 +12,7 @@ const INITIAL_STATE: State = {
 
 export default (
   state = INITIAL_STATE,
-  action: { type: string; payload: [] }
+  action: { type: string; payload: number }
 ) => {
   switch (action.type) {
     case 'FETCH_DEFAULT_CARDS':
@@ -20,7 +20,7 @@ export default (
     case 'FETCH_CARD_SUCCESS':
       return { ...state, isRequesting: false, datas: action.payload };
     case 'ADD_FAVORITE_CARDS':
-      return { ...state };
+      return { ...state, favorites: [...state.favorites, action.payload] };
     default:
       return state;
   }
