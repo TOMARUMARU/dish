@@ -1,3 +1,5 @@
+import { defaultCardsActions } from '../../action';
+
 export interface State {
   isRequesting: boolean;
   datas: {};
@@ -13,9 +15,9 @@ export default (
   action: { type: string; payload: [] }
 ) => {
   switch (action.type) {
-    case 'FETCH_DEFAULT_CARDS':
+    case defaultCardsActions.fetch.type:
       return { ...state, isRequesting: true };
-    case 'FETCH_CARD_SUCCESS':
+    case defaultCardsActions.success.type:
       return { ...state, isRequesting: false, datas: action.payload };
     default:
       return state;
