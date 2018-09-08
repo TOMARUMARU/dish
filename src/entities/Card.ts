@@ -2,8 +2,8 @@ export interface Card {
   id: number;
   title: string;
   image: string;
-  nevaluation: string;
-  number: string;
+  evaluation: number;
+  number: number;
   type: string;
   distance: string;
 }

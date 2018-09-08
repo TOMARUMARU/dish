@@ -4,10 +4,11 @@ import Swiper from 'react-native-deck-swiper';
 import Header from '../../components/Header';
 import Store from '../../components/Store';
 import ButtonList from '../../components/ButtonList';
+import { Card } from '../../entities';
 
 export interface StateProps {
   isRequesting: boolean;
-  datas: {} | '';
+  datas: Card[];
   favorites: number[];
 }
 

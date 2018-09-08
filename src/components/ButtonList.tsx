@@ -11,10 +11,6 @@ interface Props {
   favorites: number[];
 }
 
-interface DispatchProp {
-  fetchFavoriteCards: () => void;
-}
-
 class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
     if (this.props.favorites.length) {
@@ -62,13 +58,4 @@ const mapStateToProps = (state: RootState) => {
   return { favorites };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
-  return {
-    fetchFavoriteCards: () => dispatch(favoriteActions.fetch())
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ButtonList);
+export default connect(mapStateToProps)(ButtonList);
