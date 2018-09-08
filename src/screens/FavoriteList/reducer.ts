@@ -15,6 +15,8 @@ export default (
   switch (action.type) {
     case favoriteActions.add.type:
       return { ...state, favorites: [...state.favorites, action.payload] };
+    case favoriteActions.fetch.type:
+      return state;
     default:
       return state;
   }
