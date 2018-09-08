@@ -1,26 +1,22 @@
 export interface State {
   isRequesting: boolean;
   datas: {};
-  favorites: number[];
 }
 
 const INITIAL_STATE: State = {
   isRequesting: false,
-  datas: '',
-  favorites: []
+  datas: ''
 };
 
 export default (
   state = INITIAL_STATE,
-  action: { type: string; payload: number }
+  action: { type: string; payload: [] }
 ) => {
   switch (action.type) {
     case 'FETCH_DEFAULT_CARDS':
       return { ...state, isRequesting: true };
     case 'FETCH_CARD_SUCCESS':
       return { ...state, isRequesting: false, datas: action.payload };
-    case 'ADD_FAVORITE_CARDS':
-      return { ...state, favorites: [...state.favorites, action.payload] };
     default:
       return state;
   }
