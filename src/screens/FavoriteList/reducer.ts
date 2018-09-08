@@ -1,3 +1,5 @@
+import { favoriteActions } from '../../action';
+
 export interface State {
   favorites: number[];
 }
@@ -11,7 +13,7 @@ export default (
   action: { type: string; payload: number }
 ) => {
   switch (action.type) {
-    case 'ADD_FAVORITE_CARDS':
+    case favoriteActions.add.type:
       return { ...state, favorites: [...state.favorites, action.payload] };
     default:
       return state;
