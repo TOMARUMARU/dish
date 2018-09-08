@@ -1,3 +1,4 @@
+import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import { favoriteActions } from '../../action';
 
 export interface State {
@@ -8,16 +9,9 @@ const INITIAL_STATE: State = {
   favorites: []
 };
 
-export default (
-  state = INITIAL_STATE,
-  action: { type: string; payload: number }
-) => {
-  switch (action.type) {
-    case favoriteActions.add.type:
-      return { ...state, favorites: [...state.favorites, action.payload] };
-    case favoriteActions.fetch.type:
-      return state;
-    default:
-      return state;
+export default reducerWithInitialState(INITIAL_STATE).case(
+  favoriteActions.add,
+  (state, payload) => {
+    return { ...state, favorites: [...state.favorites, payload] };
   }
-};
+);
