@@ -8,7 +8,7 @@ import { Card } from '../../entities';
 
 export interface StateProps {
   isRequesting: boolean;
-  datas: Card[];
+  cards: (Card | undefined)[];
   favorites: number[];
 }
 
@@ -29,10 +29,10 @@ export default class StoreList extends PureComponent<Props> {
   }
 
   renderSwiper() {
-    if (this.props.datas) {
+    if (this.props.cards) {
       return (
         <Swiper
-          cards={this.props.datas}
+          cards={this.props.cards}
           renderCard={this.renderCard}
           marginTop={100}
           cardVerticalMargin={0}
