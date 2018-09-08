@@ -35,15 +35,7 @@ const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
     ignoreElements()
   );
 
-const addFavoriteCardsEpic: Epic<Action> = action$ =>
-  action$.pipe(
-    filter(action => action.type == 'ADD_FAVORITE_CARDS'),
-    tap(() => console.log('tests')),
-    ignoreElements()
-  );
-
 export default combineEpics(
   fetchDefaultCardsEpic,
-  failureFetchDefaultCardsEpic,
-  addFavoriteCardsEpic
+  failureFetchDefaultCardsEpic
 );
