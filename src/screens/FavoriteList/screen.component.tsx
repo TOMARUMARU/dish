@@ -3,7 +3,7 @@ import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Feather';
-import { defaultCards, favoriteCards } from '../../actions';
+import { defaultCards, favoriteCards } from '../../action';
 import { List } from '../../components/common';
 import { RootState } from '../../reducer';
 

@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import { Dispatch, Action } from 'redux';
 import { RootState } from '../../reducer';
-import { fetchDefaultCards, addFavoriteCards } from '../../actions';
+import { fetchDefaultCards, addFavoriteCards } from '../../action';
 import Component, { StateProps, DispatchProp } from './screen.component';
 
 const mapStateToProps = (state: RootState): StateProps => {
-  const { isRequesting, datas, favorites } = state.screens.storeList;
+  const { isRequesting, datas } = state.screens.storeList;
+  const { favorites } = state.screens.favoriteList;
 
-  return { datas, isRequesting, favorites };
+  return { isRequesting, datas, favorites };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
