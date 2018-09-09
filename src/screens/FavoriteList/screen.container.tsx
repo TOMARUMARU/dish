@@ -6,7 +6,7 @@ import { Card } from '../../entities';
 import { denormalize } from 'normalizr';
 
 const mapStateToProps = (state: RootState): StateProps => {
-  const cards: Array<Card | undefined> = denormalize(
+  const cards: Array<Card> = denormalize(
     Object.keys(state.entities.cards),
     cardsSchema,
     state.entities

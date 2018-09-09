@@ -7,7 +7,7 @@ import { Card } from '../../entities';
 import { cardsSchema } from '../../entities/cards/schema';
 
 export interface StateProps {
-  cards: (Card | undefined)[];
+  cards: (Card)[];
 }
 
 type Props = StateProps;
