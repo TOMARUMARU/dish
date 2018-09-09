@@ -14,6 +14,7 @@ interface Props {
 
 class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
+    console.log(this.props.cards);
     const favoriteCards = this.props.cards.filter(
       card => card.favorited == true
     );

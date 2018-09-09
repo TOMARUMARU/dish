@@ -9,7 +9,7 @@
       "favorited": false,
       "movie": {
         "id": 1,
-        "title": "avengers"
+        "title": "aaaaa"
       },
       "distance": "徒歩12分"
     },
@@ -22,7 +22,7 @@
       "favorited": false,
       "movie": {
         "id": 1,
-        "title": "avengers"
+        "title": "bbbbb"
       },
       "distance": "徒歩8分"
     },
@@ -35,7 +35,7 @@
       "favorited": false,
       "movie": {
         "id": 1,
-        "title": "avengers"
+        "title": "cccccc"
       },
       "distance": "徒歩2分"
     },
@@ -48,7 +48,7 @@
       "favorited": false,
       "movie": {
         "id": 1,
-        "title": "avengers"
+        "title": "ddddd"
       },
       "distance": "徒歩90分"
     },
@@ -61,7 +61,7 @@
       "favorited": false,
       "movie": {
         "id": 1,
-        "title": "avengers"
+        "title": "eeeee"
       },
       "distance": "徒歩220分"
     }
