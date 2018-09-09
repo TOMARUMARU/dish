@@ -8,9 +8,11 @@ export interface State {
 
 const INITIAL_STATE: State = {};
 
-export default reducerWithInitialState(INITIAL_STATE).case(
-  CardsActions.success,
-  (state, payload) => {
+export default reducerWithInitialState(INITIAL_STATE)
+  .case(CardsActions.success, (state, payload) => {
     return { ...state, ...payload.entities.cards };
-  }
-);
+  })
+  .case(CardsActions.favorite, (state, payload) => {
+    state[payload].favorited = true;
+    return { ...state };
+  });
