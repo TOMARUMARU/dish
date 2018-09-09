@@ -3,7 +3,7 @@ import { Dispatch, Action } from 'redux';
 import { denormalize } from 'normalizr';
 import { RootState } from '../../reducer';
 import { favoriteActions } from '../FavoriteList/actions';
-import { defaultCardsActions } from '../../entities/cards/action';
+import { CardsActions } from '../../entities/cards/action';
 import Component, { StateProps, DispatchProp } from './screen.component';
 import { cardsSchema } from '../../entities/cards/schema';
 import { Card } from '../../entities';
@@ -22,7 +22,7 @@ const mapStateToProps = (state: RootState): StateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
   return {
-    onFetchDefaultCards: () => dispatch(defaultCardsActions.fetch()),
+    onFetchDefaultCards: () => dispatch(CardsActions.fetch()),
     addFavoriteCards: (cardIndex: number) =>
       dispatch(favoriteActions.add(cardIndex))
   };

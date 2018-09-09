@@ -1,5 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { defaultCardsActions } from './action';
+import { CardsActions } from './action';
 import { Card } from '../../entities';
 
 export interface State {
@@ -9,7 +9,7 @@ export interface State {
 const INITIAL_STATE: State = {};
 
 export default reducerWithInitialState(INITIAL_STATE).case(
-  defaultCardsActions.success,
+  CardsActions.success,
   (state, payload) => {
     return { ...state, ...payload.entities.cards };
   }

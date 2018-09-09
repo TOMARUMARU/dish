@@ -1,9 +1,10 @@
 import actionCreatorFactory from 'typescript-fsa';
 import { NormalizedCards } from './interface';
-const defaultCardsActionCreator = actionCreatorFactory('Screens/StoreList');
+const CardsActionCreator = actionCreatorFactory('Screens/StoreList');
 
-export const defaultCardsActions = {
-  fetch: defaultCardsActionCreator('FETCH_DEFAULT_CARDS'),
-  success: defaultCardsActionCreator<NormalizedCards>('FETCH_CARD_SUCCESS'),
-  failure: defaultCardsActionCreator<string>('FETCH_CARD_FAILURE')
+export const CardsActions = {
+  fetch: CardsActionCreator('FETCH_DEFAULT_CARDS'),
+  success: CardsActionCreator<NormalizedCards>('FETCH_CARD_SUCCESS'),
+  failure: CardsActionCreator<string>('FETCH_CARD_FAILURE'),
+  failure: CardsActionCreator<number>('ADD_FAVORITE_CARD')
 };

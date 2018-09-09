@@ -1,4 +1,4 @@
-import { defaultCardsActions } from './action';
+import { CardsActions } from './action';
 import { combineEpics, Epic } from 'redux-observable';
 import { Alert } from 'react-native';
 import {
@@ -18,19 +18,19 @@ import { DefaultCardsResponse, NormalizedCards } from './interface';
 
 const fetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
-    filter(defaultCardsActions.fetch.match),
+    filter(CardsActions.fetch.match),
     mergeMap(() =>
       ajax.getJSON<DefaultCardsResponse>('http://localhost:3000/dish').pipe(
         map((response: DefaultCardsResponse) =>
           normalize(response, cardsSchema)
         ),
         map((normalizedCards: NormalizedCards) => ({
-          type: defaultCardsActions.success.type,
+          type: CardsActions.success.type,
           payload: normalizedCards
         })),
         catchError((err: Error) =>
           of({
-            type: defaultCardsActions.failure.type,
+            type: CardsActions.failure.type,
             payload: err.message
           })
         )
@@ -40,7 +40,7 @@ const fetchDefaultCardsEpic: Epic<Action> = action$ =>
 
 const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
-    filter(defaultCardsActions.failure.match),
+    filter(CardsActions.failure.match),
     tap(action => Alert.alert(action.payload)),
     ignoreElements()
   );
