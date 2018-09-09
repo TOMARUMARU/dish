@@ -4,6 +4,7 @@ export interface Card {
   image: string;
   evaluation: number;
   number: number;
+  favorited: boolean;
   type: string;
   distance: string;
 }
