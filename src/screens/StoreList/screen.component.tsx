@@ -9,7 +9,6 @@ import { Card } from '../../entities';
 export interface StateProps {
   isRequesting: boolean;
   cards: (Card | undefined)[];
-  favorites: number[];
 }
 
 export interface DispatchProp {

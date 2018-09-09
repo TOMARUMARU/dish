@@ -14,8 +14,7 @@ const mapStateToProps = (state: RootState): StateProps => {
     cardsSchema,
     state.entities
   );
-  const { favorites } = state.screens.favoriteList;
-  return { isRequesting, cards, favorites };
+  return { isRequesting, cards };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
