@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { Dispatch, Action } from 'redux';
 import { denormalize } from 'normalizr';
 import { RootState } from '../../reducer';
-import { favoriteActions } from '../FavoriteList/actions';
 import { CardsActions } from '../../entities/cards/action';
 import Component, { StateProps, DispatchProp } from './screen.component';
 import { cardsSchema } from '../../entities/cards/schema';
@@ -16,7 +15,6 @@ const mapStateToProps = (state: RootState): StateProps => {
     state.entities
   );
   const { favorites } = state.screens.favoriteList;
-
   return { isRequesting, cards, favorites };
 };
 
@@ -24,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
   return {
     onFetchDefaultCards: () => dispatch(CardsActions.fetch()),
     addFavoriteCards: (cardIndex: number) =>
-      dispatch(favoriteActions.add(cardIndex))
+      dispatch(CardsActions.favorite(cardIndex + 1))
   };
 };
 
