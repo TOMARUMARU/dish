@@ -5,7 +5,9 @@ export interface Card {
   evaluation: number;
   number: number;
   favorited: boolean;
-  type: string;
+  movie: {
+    id: number;
+    type: string;
+  };
   distance: string;
-  movie: number;
 }
