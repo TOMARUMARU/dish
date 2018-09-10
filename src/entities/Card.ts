@@ -7,4 +7,5 @@ export interface Card {
   favorited: boolean;
   type: string;
   distance: string;
+  movie: number;
 }

@@ -21,7 +21,7 @@
       "number": "970",
       "favorited": false,
       "movie": {
-        "id": 1,
+        "id": 2,
         "type": "bbbbb"
       },
       "distance": "徒歩8分"
@@ -34,7 +34,7 @@
       "number": "1132",
       "favorited": false,
       "movie": {
-        "id": 1,
+        "id": 3,
         "type": "cccccc"
       },
       "distance": "徒歩2分"
@@ -47,7 +47,7 @@
       "number": "679",
       "favorited": false,
       "movie": {
-        "id": 1,
+        "id": 4,
         "type": "ddddd"
       },
       "distance": "徒歩90分"
@@ -60,7 +60,7 @@
       "number": "845",
       "favorited": false,
       "movie": {
-        "id": 1,
+        "id": 5,
         "type": "eeeee"
       },
       "distance": "徒歩220分"

@@ -1,4 +1,7 @@
 import { schema } from 'normalizr';
 
-const cardSchema = new schema.Entity('cards');
+const movieSchema = new schema.Entity('movies');
+const cardSchema = new schema.Entity('cards', {
+  movie: movieSchema
+});
 export const cardsSchema = [cardSchema];
