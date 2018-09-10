@@ -15,8 +15,9 @@ interface Props {
 class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
     const favoriteCards = this.props.cards.filter(
-      card => card.favorited == true
+      (card: any) => card.favorited == true
     );
+
     if (favoriteCards.length) {
       return (
         <TouchableOpacity onPress={Actions.FavoriteList}>
