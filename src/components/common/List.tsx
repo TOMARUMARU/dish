@@ -7,7 +7,11 @@ interface Card {
   image: string;
   evaluation: number;
   number: number;
-  type: string;
+  favorited: boolean;
+  movie: {
+    id: number;
+    type: string;
+  };
   distance: string;
 }
 
@@ -16,7 +20,7 @@ interface Props {
 }
 
 const List: React.SFC<Props> = props => {
-  const { title, image, evaluation, number, type, distance } = props.data;
+  const { title, image, evaluation, number, movie, distance } = props.data;
 
   const {
     listStyle,
@@ -50,7 +54,7 @@ const List: React.SFC<Props> = props => {
       </View>
 
       <View style={infoStyle}>
-        <Text style={typeStyle}>{type}</Text>
+        <Text style={typeStyle}>{movie.type}</Text>
 
         <Text style={distanceStyle}>{distance}</Text>
       </View>
