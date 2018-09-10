@@ -1,4 +1,4 @@
 import { combineEpics } from 'redux-observable';
-import storeListEpic from './screens/StoreList/epic';
+import entitiesEpic from './entities/epic';
 
-export default combineEpics(storeListEpic);
+export default combineEpics(entitiesEpic);

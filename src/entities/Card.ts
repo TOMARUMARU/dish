@@ -4,6 +4,10 @@ export interface Card {
   image: string;
   evaluation: number;
   number: number;
-  type: string;
+  favorited: boolean;
+  movie: {
+    id: number;
+    type: string;
+  };
   distance: string;
 }

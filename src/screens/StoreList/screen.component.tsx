@@ -8,8 +8,7 @@ import { Card } from '../../entities';
 
 export interface StateProps {
   isRequesting: boolean;
-  datas: Card[];
-  favorites: number[];
+  cards: (Card | undefined)[];
 }
 
 export interface DispatchProp {
@@ -29,10 +28,10 @@ export default class StoreList extends PureComponent<Props> {
   }
 
   renderSwiper() {
-    if (this.props.datas) {
+    if (this.props.cards) {
       return (
         <Swiper
-          cards={this.props.datas}
+          cards={this.props.cards}
           renderCard={this.renderCard}
           marginTop={100}
           cardVerticalMargin={0}
@@ -50,8 +49,12 @@ export default class StoreList extends PureComponent<Props> {
     image: string;
     evaluation: number;
     number: number;
-    type: string;
     distance: string;
+    favorited: boolean;
+    movie: {
+      id: number;
+      type: string;
+    };
   }) => {
     return <Store key={data.title} data={data} />;
   };

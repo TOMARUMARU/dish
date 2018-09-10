@@ -1,19 +1,23 @@
 import React, { PureComponent } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Dispatch, Action } from 'redux';
+import { denormalize } from 'normalizr';
 import { Actions } from 'react-native-router-flux';
-import { favoriteActions } from '../action';
 import { Button } from './common';
 import { RootState } from '../reducer';
+import { cardsSchema } from '../entities/cards/schema';
+import { Card } from '../entities';
 
 interface Props {
-  favorites: number[];
+  cards: (Card | undefined)[];
 }
 
 class ButtonList extends PureComponent<Props> {
   favoritesListButton() {
-    if (this.props.favorites.length) {
+    const favoriteCards = this.props.cards.filter(
+      card => card.favorited == true
+    );
+    if (favoriteCards.length) {
       return (
         <TouchableOpacity onPress={Actions.FavoriteList}>
           <Button name="briefcase" color="red" />
@@ -53,9 +57,12 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state: RootState) => {
-  const { favorites } = state.screens.favoriteList;
-
-  return { favorites };
+  const cards: Array<Card | undefined> = denormalize(
+    Object.keys(state.entities.cards),
+    cardsSchema,
+    state.entities
+  );
+  return { cards };
 };
 
 export default connect(mapStateToProps)(ButtonList);

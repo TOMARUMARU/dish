@@ -4,21 +4,21 @@ import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Feather';
 import { List } from '../../components/common';
 import { Card } from '../../entities';
+import { cardsSchema } from '../../entities/cards/schema';
 
 export interface StateProps {
-  datas: Card[];
-  favorites: number[];
+  cards: (Card)[];
 }
 
 type Props = StateProps;
 
 export default class FavoriteList extends PureComponent<Props> {
   listItems() {
-    return this.props.favorites.map(favorite => (
-      <List
-        key={this.props.datas[favorite].title}
-        data={this.props.datas[favorite]}
-      />
+    const favoriteCards = this.props.cards.filter(
+      card => card.favorited == true
+    );
+    return favoriteCards.map(favoriteCard => (
+      <List key={favoriteCard.title} data={favoriteCard} />
     ));
   }
 
