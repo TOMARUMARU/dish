@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import ScreensReducer, { ScreensState } from './screens/reducer';
-import EntitiesReducer, { EntitiesState } from './entities/reducer';
+import CardReducer, { State as CardsState } from './entities/cards/reducer';
 
 export interface RootState {
   screens: ScreensState;
-  entities: EntitiesState;
+  entities: CardsState;
 }
 
 export default combineReducers({
   screens: ScreensReducer,
-  entities: EntitiesReducer
+  entities: CardReducer
 });
