@@ -49,8 +49,12 @@ export default class StoreList extends PureComponent<Props> {
     image: string;
     evaluation: number;
     number: number;
-    type: string;
     distance: string;
+    favorited: boolean;
+    movie: {
+      id: number;
+      type: string;
+    };
   }) => {
     return <Store key={data.title} data={data} />;
   };
