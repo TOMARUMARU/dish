@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import CardReducer, { State as CardsState } from './cards/reducer';
 
-export interface entitiesState {
+export interface EntitiesState {
   datas: CardsState;
 }
 
