@@ -14,7 +14,11 @@ import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
 import { normalize } from 'normalizr';
 import { cardsSchema } from './schema';
-import { DefaultCardsResponse, NormalizedCards } from './interface';
+import {
+  DefaultCardsResponse,
+  NormalizedCards,
+  ErrorMessage
+} from './interface';
 
 const fetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
@@ -41,7 +45,7 @@ const fetchDefaultCardsEpic: Epic<Action> = action$ =>
 const failureFetchDefaultCardsEpic: Epic<Action> = action$ =>
   action$.pipe(
     filter(CardsActions.failure.match),
-    tap(action => Alert.alert(action.payload)),
+    tap(action => Alert.alert(action.payload.err)),
     ignoreElements()
   );
 
