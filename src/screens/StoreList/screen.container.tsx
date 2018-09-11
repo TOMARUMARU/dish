@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): DispatchProp => {
   return {
     onFetchDefaultCards: () => dispatch(CardsActions.fetch()),
     addFavoriteCards: (cardIndex: number) =>
-      dispatch(CardsActions.favorite(cardIndex + 1))
+      dispatch(CardsActions.favorite({ cardId: cardIndex + 1 }))
   };
 };
 

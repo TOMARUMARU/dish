@@ -15,8 +15,8 @@ export default reducerWithInitialState(INITIAL_STATE)
   .case(CardsActions.favorite, (state, payload) => {
     return {
       ...state,
-      [payload]: {
-        ...state[payload],
+      [payload.cardId]: {
+        ...state[payload.cardId],
         favorited: true
       }
     };
