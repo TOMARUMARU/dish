@@ -13,6 +13,11 @@ export default reducerWithInitialState(INITIAL_STATE)
     return { ...state, ...payload.entities.cards };
   })
   .case(CardsActions.favorite, (state, payload) => {
-    state[payload].favorited = true;
-    return { ...state };
+    return {
+      ...state,
+      [payload]: {
+        ...state[payload],
+        favorited: true
+      }
+    };
   });
