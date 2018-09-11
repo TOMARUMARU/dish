@@ -15,4 +15,12 @@ export interface NormalizedCards {
   };
 }
 
+export interface ErrorMessage {
+  err: string;
+}
+
+export interface CardId {
+  cardId: number;
+}
+
 export interface DefaultCardsResponse extends Array<Card> {}
