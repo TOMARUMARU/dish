@@ -3,18 +3,16 @@ import { CardsActions } from './action';
 import { Card } from '../../entities';
 
 export interface State {
-  cards: {
-    [id: number]: Card;
-  };
+  [id: number]: Card;
 }
 
-const INITIAL_STATE: State = { cards: {} };
+const INITIAL_STATE: State = {};
 
 export default reducerWithInitialState(INITIAL_STATE)
   .case(CardsActions.success, (state, payload) => {
-    return { ...state, ...payload.entities };
+    return { ...state, ...payload.entities.cards };
   })
   .case(CardsActions.favorite, (state, payload) => {
-    state.cards[payload].favorited = true;
+    state[payload].favorited = true;
     return { ...state };
   });
