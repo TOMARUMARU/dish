@@ -7,9 +7,9 @@ import { denormalize } from 'normalizr';
 
 const mapStateToProps = (state: RootState): StateProps => {
   const cards: Array<Card> = denormalize(
-    Object.keys(state.entities.datas.cards),
+    Object.keys(state.entities.cards),
     cardsSchema,
-    state.entities.datas
+    state.entities
   );
   return { cards };
 };
