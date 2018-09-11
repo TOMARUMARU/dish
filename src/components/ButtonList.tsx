@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state: RootState) => {
   const cards: Array<Card | undefined> = denormalize(
-    Object.keys(state.entities.cards),
+    Object.keys(state.entities.datas.cards),
     cardsSchema,
-    state.entities
+    state.entities.datas
   );
   return { cards };
 };

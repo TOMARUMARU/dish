@@ -10,9 +10,9 @@ import { Card } from '../../entities';
 const mapStateToProps = (state: RootState): StateProps => {
   const { isRequesting } = state.screens.storeList;
   const cards: Array<Card | undefined> = denormalize(
-    Object.keys(state.entities.cards),
+    Object.keys(state.entities.datas.cards),
     cardsSchema,
-    state.entities
+    state.entities.datas
   );
   return { isRequesting, cards };
 };
