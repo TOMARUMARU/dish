@@ -6,6 +6,12 @@ export interface NormalizedCards {
     cards: {
       [id: number]: Card;
     };
+    movies: {
+      [id: number]: {
+        id: number;
+        type: string;
+      };
+    };
   };
 }
 
