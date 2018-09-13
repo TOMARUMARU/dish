@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/react-redux": "^6.0.7",
     "axios": "^0.18.0",
+    "babel-runtime": "^6.26.0",
     "normalizr": "^3.2.4",
     "react": "16.4.1",
     "react-native": "0.56.0",
